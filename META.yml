@@ -1,0 +1,54 @@
+---
+abstract: 'Various scripts to manage Koha instances'
+author:
+  - 'Frederic Demians <f.demians@tamil.fr>'
+build_requires:
+  Module::Build: 0.3601
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+  Module::Build: 0.3601
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.112150'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Koha-Contrib-Tamil
+requires:
+  AnyEvent: 0
+  C4::AuthoritiesMarc: 0
+  C4::Biblio: 0
+  C4::Context: 0
+  C4::Items: 0
+  Carp: 0
+  DBI: 0
+  Fatal: 0
+  File::Path: 0
+  File::Temp: 0
+  FindBin: 0
+  Getopt::Long: 0
+  IO::File: 0
+  List::Util: 0
+  Locale::TextDomain: 0
+  Log::Dispatch: 0
+  Log::Dispatch::File: 0
+  Log::Dispatch::Screen: 0
+  MARC::Batch: 0
+  MARC::File::XML: 0
+  MARC::Record: 0
+  Moose: 0
+  Moose::Role: 0
+  Moose::Util::TypeConstraints: 0
+  MooseX::Getopt: 0
+  Pod::Usage: 0
+  XML::Simple: 0
+  YAML: 0
+  YAML::Syck: 0
+  ZOOM: 0
+  diagnostics: 0
+  perl: 5.010
+  strict: 0
+  utf8: 0
+  warnings: 0
+version: 0.001
