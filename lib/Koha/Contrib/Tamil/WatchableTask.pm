@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::WatchableTask;
 {
-  $Koha::Contrib::Tamil::WatchableTask::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::WatchableTask::VERSION = '0.001';
 }
 #ABSTRACT: Role for tasks which are watchable
 

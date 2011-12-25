@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.001';
 }
 #ABSTRACT: Koha biblio/authority records reader
 

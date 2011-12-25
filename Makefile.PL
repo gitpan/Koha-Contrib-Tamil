@@ -21,9 +21,9 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Koha-Contrib-Tamil",
   "EXE_FILES" => [
+    "bin/koha-index-daemon",
     "bin/koha-index",
     "bin/koha-cloud",
-    "bin/koha-index-daemon",
     "bin/koha-auth"
   ],
   "LICENSE" => "perl",

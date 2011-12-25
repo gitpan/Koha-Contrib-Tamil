@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReaderBase;
 {
-  $Koha::Contrib::Tamil::RecordReaderBase::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::RecordReaderBase::VERSION = '0.001';
 }
 # ABSTRACT: Records reader base class
 use Moose;

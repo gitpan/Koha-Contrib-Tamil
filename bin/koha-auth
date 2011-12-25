@@ -2,7 +2,7 @@
 
 package main;
 {
-  $main::VERSION = '0.001'; # TRIAL
+  $main::VERSION = '0.001';
 }
 # PODNAME: koha-auth
 # ABSTRACT: Generate authorities from bibliographic records

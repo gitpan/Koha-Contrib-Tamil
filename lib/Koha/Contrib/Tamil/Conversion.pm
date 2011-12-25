@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Conversion;
 {
-  $Koha::Contrib::Tamil::Conversion::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::Conversion::VERSION = '0.001';
 }
 # ABSTRACT: Base class for conversion type subclasses
 

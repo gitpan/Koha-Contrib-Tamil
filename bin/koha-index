@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.001'; # TRIAL
+  $Main::VERSION = '0.001';
 }
 # PODNAME: koha-index
 # ABSTRACT: Index Koha biblio/authority records

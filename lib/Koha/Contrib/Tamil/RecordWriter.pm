@@ -1,8 +1,8 @@
 package Koha::Contrib::Tamil::RecordWriter;
 {
-  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.001';
 }
-#ABSTRACT: RecordWriter - Class for writing whatever records into whatever
+#ABSTRACT: RecordWriter - Base class for writing whatever records into whatever
 
 use Moose;
 
@@ -31,16 +31,40 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 
-__END__
+
 =pod
 
 =head1 NAME
 
-Koha::Contrib::Tamil::RecordWriter - RecordWriter - Class for writing whatever records into whatever
+Koha::Contrib::Tamil::RecordWriter - RecordWriter - Base class for writing whatever records into whatever
 
 =head1 VERSION
 
 version 0.001
+
+=head1 DESCRIPTION
+
+=head1 METHODS
+
+=head2 begin
+
+=head2 end
+
+=head2 write
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<Koha::Contrib::Tamil::RecordWriter>
+
+=item *
+
+L<Koha::Contrib::Tamil::RecordReader>
+
+=back
 
 =head1 AUTHOR
 
@@ -54,4 +78,8 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
+
+__END__
+
 

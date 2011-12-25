@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Zebra::Clouder;
 {
-  $Koha::Contrib::Tamil::Zebra::Clouder::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::Zebra::Clouder::VERSION = '0.001';
 }
 # ABSTRACT: Class generating keywords clouds from Koha Zebra indexes
 

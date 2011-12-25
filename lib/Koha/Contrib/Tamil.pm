@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Koha::Contrib::Tamil;
 {
-  $Koha::Contrib::Tamil::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::VERSION = '0.001';
 }
 # ABSTRACT: Various scripts to manage Koha instances
 

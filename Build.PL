@@ -62,9 +62,9 @@ my %module_build_args = (
     "warnings" => 0
   },
   "script_files" => [
+    "bin/koha-index-daemon",
     "bin/koha-index",
     "bin/koha-cloud",
-    "bin/koha-index-daemon",
     "bin/koha-auth"
   ]
 );

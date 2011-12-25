@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::LogProcess;
 {
-  $Koha::Contrib::Tamil::LogProcess::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::LogProcess::VERSION = '0.001';
 }
 # ABSTRACT: Base class for process loger
 use Moose;

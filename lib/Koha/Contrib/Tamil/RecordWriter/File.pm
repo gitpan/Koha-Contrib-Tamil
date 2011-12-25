@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter::File;
 {
-  $Koha::Contrib::Tamil::RecordWriter::File::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::RecordWriter::File::VERSION = '0.001';
 }
 #ABSTRACT: Records writer into a file base class
 

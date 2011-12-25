@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::EchoWatcher;
 {
-  $Koha::Contrib::Tamil::EchoWatcher::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::EchoWatcher::VERSION = '0.001';
 }
 # ABSTRACT: A watch echoing a process messages
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Converter;
 {
-  $Koha::Contrib::Tamil::Converter::VERSION = '0.001'; # TRIAL
+  $Koha::Contrib::Tamil::Converter::VERSION = '0.001';
 }
 # ABSTRACT: Role for any converter class
 
