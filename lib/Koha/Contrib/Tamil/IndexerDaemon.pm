@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::IndexerDaemon;
 {
-  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.002';
+  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.003';
 }
 # ABSTRACT: Class implementing a Koha records indexer daemon
 
@@ -103,13 +103,15 @@ __PACKAGE__->meta->make_immutable;
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::IndexerDaemon - Class implementing a Koha records indexer daemon
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -145,8 +147,6 @@ Number of seconds between indexing.
 =head2 verbose(0|1)
 
 Task verbosity.
-
-=encoding utf8
 
 =head1 AUTHOR
 

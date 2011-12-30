@@ -20,7 +20,7 @@ my %module_build_args = (
     "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>"
   ],
   "dist_name" => "Koha-Contrib-Tamil",
-  "dist_version" => "0.002",
+  "dist_version" => "0.003",
   "license" => "gpl",
   "module_name" => "Koha::Contrib::Tamil",
   "recommends" => {},

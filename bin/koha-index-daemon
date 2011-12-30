@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.002';
+  $Main::VERSION = '0.003';
 }
 # PODNAME: koha-index-daemon
 # ABSTRACT: Insert/update/delete records into Koha Zebra server
@@ -26,7 +26,7 @@ koha-index-daemon - Insert/update/delete records into Koha Zebra server
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

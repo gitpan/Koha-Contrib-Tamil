@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Koha::Contrib::Tamil;
 {
-  $Koha::Contrib::Tamil::VERSION = '0.002';
+  $Koha::Contrib::Tamil::VERSION = '0.003';
 }
 # ABSTRACT: Various scripts to manage Koha instances
 
@@ -12,15 +12,15 @@ package Koha::Contrib::Tamil;
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil - Various scripts to manage Koha instances
 
 =head1 VERSION
 
-version 0.002
-
-=head1 DESCRIPTION
+version 0.003
 
 =head1 SEE ALSO
 

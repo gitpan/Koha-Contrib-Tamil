@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.002';
+  $Main::VERSION = '0.003';
 }
 
 # PODNAME: koha-cloud
@@ -92,13 +92,15 @@ run();
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 koha-cloud - Creates HTML keywords clouds from Koha Zebra Indexes
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 USAGE
 

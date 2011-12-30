@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Conversion;
 {
-  $Koha::Contrib::Tamil::Conversion::VERSION = '0.002';
+  $Koha::Contrib::Tamil::Conversion::VERSION = '0.003';
 }
 # ABSTRACT: Base class for conversion type subclasses
 
@@ -65,13 +65,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::Conversion - Base class for conversion type subclasses
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

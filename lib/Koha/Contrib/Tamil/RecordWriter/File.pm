@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter::File;
 {
-  $Koha::Contrib::Tamil::RecordWriter::File::VERSION = '0.002';
+  $Koha::Contrib::Tamil::RecordWriter::File::VERSION = '0.003';
 }
 #ABSTRACT: Records writer into a file base class
 
@@ -44,13 +44,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::RecordWriter::File - Records writer into a file base class
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::WatchableTask;
 {
-  $Koha::Contrib::Tamil::WatchableTask::VERSION = '0.002';
+  $Koha::Contrib::Tamil::WatchableTask::VERSION = '0.003';
 }
 #ABSTRACT: Role for tasks which are watchable
 
@@ -18,13 +18,15 @@ requires 'end_message';
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::WatchableTask - Role for tasks which are watchable
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

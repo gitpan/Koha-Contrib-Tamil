@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::Task;
 {
-  $Koha::Contrib::Tamil::Authority::Task::VERSION = '0.002';
+  $Koha::Contrib::Tamil::Authority::Task::VERSION = '0.003';
 }
 # ABSTRACT: Base class for managing authorities manipulations
 use Moose;
@@ -34,13 +34,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::Authority::Task - Base class for managing authorities manipulations
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

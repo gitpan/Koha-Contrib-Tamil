@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.002';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.003';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -224,13 +224,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSYS
 

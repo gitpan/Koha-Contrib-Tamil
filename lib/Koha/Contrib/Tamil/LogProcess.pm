@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::LogProcess;
 {
-  $Koha::Contrib::Tamil::LogProcess::VERSION = '0.002';
+  $Koha::Contrib::Tamil::LogProcess::VERSION = '0.003';
 }
 # ABSTRACT: Base class for process loger
 use Moose;
@@ -41,13 +41,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::LogProcess - Base class for process loger
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 NAME
 

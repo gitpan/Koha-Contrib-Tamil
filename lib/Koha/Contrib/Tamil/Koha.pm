@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Koha;
 {
-  $Koha::Contrib::Tamil::Koha::VERSION = '0.002';
+  $Koha::Contrib::Tamil::Koha::VERSION = '0.003';
 }
 #ABSTRACT: Class exposing info about a Koha instance.
 
@@ -160,13 +160,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::Koha - Class exposing info about a Koha instance.
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 ATTRIBUTES
 

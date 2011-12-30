@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::FileProcess;
 {
-  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.002';
+  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.003';
 }
 #ABSTRACT: FileProcess - Base class for file processing
 
@@ -106,13 +106,15 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Koha::Contrib::Tamil::FileProcess - FileProcess - Base class for file processing
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 
