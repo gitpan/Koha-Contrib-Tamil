@@ -7,6 +7,7 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
+    "FindBin" => 0,
     "Module::Build" => "0.3601",
     "Test::More" => 0
   },
@@ -16,26 +17,21 @@ my %module_build_args = (
   },
   "dist_abstract" => "Various scripts to manage Koha instances",
   "dist_author" => [
-    "Frederic Demians <f.demians\@tamil.fr>"
+    "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>"
   ],
   "dist_name" => "Koha-Contrib-Tamil",
-  "dist_version" => "0.001",
-  "license" => "perl",
+  "dist_version" => "0.002",
+  "license" => "gpl",
   "module_name" => "Koha::Contrib::Tamil",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "AnyEvent" => 0,
-    "C4::AuthoritiesMarc" => 0,
-    "C4::Biblio" => 0,
-    "C4::Context" => 0,
-    "C4::Items" => 0,
     "Carp" => 0,
     "DBI" => 0,
     "Fatal" => 0,
     "File::Path" => 0,
     "File::Temp" => 0,
-    "FindBin" => 0,
     "Getopt::Long" => 0,
     "IO::File" => 0,
     "List::Util" => 0,

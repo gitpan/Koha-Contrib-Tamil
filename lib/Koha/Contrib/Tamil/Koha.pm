@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Koha;
 {
-  $Koha::Contrib::Tamil::Koha::VERSION = '0.001';
+  $Koha::Contrib::Tamil::Koha::VERSION = '0.002';
 }
 #ABSTRACT: Class exposing info about a Koha instance.
 
@@ -15,11 +15,17 @@ use MARC::File::XML;
 use YAML;
 
 
+
 has conf_file => ( is => 'rw', isa => 'Str' );
+
+
 
 has dbh => ( is => 'rw' );
 
+
+
 has conf => ( is => 'rw' );
+
 
 has _zconn => ( is => 'rw', isa => 'HashRef' );
 
@@ -56,7 +62,7 @@ sub BUILD {
 }
 
 
-# Réinitialisation des deux connexions
+
 sub zconn_reset {
     my $self = shift;
     my $zcs = $self->_zconn;
@@ -66,6 +72,7 @@ sub zconn_reset {
         undef $zcs->{$server};
     }
 }
+
 
 
 sub zconn {
@@ -110,9 +117,11 @@ sub zconn {
 }
 
 
+
 sub zbiblio {
     shift->zconn( 'biblio' );
 }
+
 
 
 sub zauth {
@@ -120,9 +129,7 @@ sub zauth {
 }
 
 
-#
-# Return a MARC::Record from its biblionumber
-#
+
 sub get_biblio_marc {
     my ( $self, $id ) = @_; 
     my $sth = $self->dbh->prepare(
@@ -159,18 +166,59 @@ Koha::Contrib::Tamil::Koha - Class exposing info about a Koha instance.
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 ATTRIBUTES
+
+=head2 conf_file
+
+Name of Koha configuration file. If not supplied, the configuration file is
+taken in KOHA_CONF environment variable.
+
+=head2 dbh
+
+Handle to Koha database defined in Koha configuration file.
+
+=head2 conf
+
+Koha XML configuration file.
+
+=head1 METHODS
+
+=head2 zconn_reset
+
+Reset both Zebra connections, biblio/authority server.
+
+=head2 zconn($type)
+
+Return a connection to biblio or authority Zebra server. Example:
+
+  my $zc = $koha->zconn('biblio');
+  my $zc = $koha->zconn('authority');
+
+=head2 zbiblio
+
+Returns a L<ZOOM::connection> to Koha bibliographic records Zebra server.
+
+=head2 zauth
+
+Returns a L<ZOOM::connection> to Koha authority records Zebra server.
+
+=head2 get_biblio_marc($biblionumber)
+
+Return a MARC::Record from its biblionumber
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is Copyright (c) 2011 by Fréderic Démians.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut
 

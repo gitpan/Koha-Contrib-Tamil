@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter;
 {
-  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.001';
+  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.002';
 }
 #ABSTRACT: RecordWriter - Base class for writing whatever records into whatever
 
@@ -40,7 +40,7 @@ Koha::Contrib::Tamil::RecordWriter - RecordWriter - Base class for writing whate
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
@@ -68,14 +68,15 @@ L<Koha::Contrib::Tamil::RecordReader>
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is Copyright (c) 2011 by Fréderic Démians.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReaderBase;
 {
-  $Koha::Contrib::Tamil::RecordReaderBase::VERSION = '0.001';
+  $Koha::Contrib::Tamil::RecordReaderBase::VERSION = '0.002';
 }
 # ABSTRACT: Records reader base class
 use Moose;
@@ -33,18 +33,19 @@ Koha::Contrib::Tamil::RecordReaderBase - Records reader base class
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is Copyright (c) 2011 by Fréderic Démians.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut
 

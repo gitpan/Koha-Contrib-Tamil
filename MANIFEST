@@ -37,6 +37,7 @@ lib/Koha/Contrib/Tamil/Zebra/Clouder.pm
 po/Makefile
 po/PACKAGE
 po/POTFILES.in
+po/fr.mo
 po/fr.po
 po/fr.tamil.koha-tools.pot
 t/00.load.t

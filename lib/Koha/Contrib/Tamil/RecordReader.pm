@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.001';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.002';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -131,8 +131,8 @@ sub get_biblio_xml {
     $sth->execute( $id );
     my ($marcxml) = $sth->fetchrow;
 
-    # If biblio isn't found in biblioitems, it is search in deletedbilioitems
-    # Usefull for delete Zebra requests
+    # If biblio isn't found in biblioitems, it is searched in
+    # deletedbilioitems. Usefull for delete Zebra requests
     unless ( $marcxml ) {
         $sth = $self->koha->dbh->prepare(
             "SELECT marcxml FROM deletedbiblioitems WHERE biblionumber=? ");
@@ -230,7 +230,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSYS
 
@@ -247,21 +247,23 @@ version 0.001
   my $reader = Koha::Contrib::Tamil::RecordReader->new(
     koha => k$, source => 'biblio', select => 'queue' );
 
-  my $k = Koha->new( '/usr/local/koha-world/etc/koha-conf.xml' );
+  my $k = Koha::Contrib::Tamil::Koha->new(
+    '/usr/local/koha-world/etc/koha-conf.xml' );
   # Return XML records.
   my $reader = Koha::Contrib::Tamil::RecordReader->new(
     koha => k$, source => authority, select => 'queue', xml => 1 );
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is Copyright (c) 2011 by Fréderic Démians.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut
 

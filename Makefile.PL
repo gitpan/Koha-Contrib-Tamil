@@ -10,8 +10,9 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Various scripts to manage Koha instances",
-  "AUTHOR" => "Frederic Demians <f.demians\@tamil.fr>",
+  "AUTHOR" => "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>",
   "BUILD_REQUIRES" => {
+    "FindBin" => 0,
     "Module::Build" => "0.3601",
     "Test::More" => 0
   },
@@ -26,20 +27,15 @@ my %WriteMakefileArgs = (
     "bin/koha-cloud",
     "bin/koha-auth"
   ],
-  "LICENSE" => "perl",
+  "LICENSE" => "gpl",
   "NAME" => "Koha::Contrib::Tamil",
   "PREREQ_PM" => {
     "AnyEvent" => 0,
-    "C4::AuthoritiesMarc" => 0,
-    "C4::Biblio" => 0,
-    "C4::Context" => 0,
-    "C4::Items" => 0,
     "Carp" => 0,
     "DBI" => 0,
     "Fatal" => 0,
     "File::Path" => 0,
     "File::Temp" => 0,
-    "FindBin" => 0,
     "Getopt::Long" => 0,
     "IO::File" => 0,
     "List::Util" => 0,
@@ -64,7 +60,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -1,13 +1,10 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.001';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.002';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
 use Moose;
-
-use FindBin qw( $Bin );
-use lib "$Bin/../lib";
 
 use Carp;
 use Koha::Contrib::Tamil::Koha;
@@ -15,7 +12,6 @@ use Koha::Contrib::Tamil::RecordReader;
 use Koha::Contrib::Tamil::RecordWriter::File::Marcxml;
 use Koha::Contrib::Tamil::Conversion;
 use File::Path;
-use YAML;
 use Locale::TextDomain 'fr.tamil.koha-tools';
 
 
@@ -57,11 +53,7 @@ has directory => (
     default => './koha-index',
 );
 
-has verbose => (
-    is      => 'rw',
-    isa     => 'Bool',
-    default => 0,
-);
+has verbose => ( is => 'rw', isa => 'Bool', default => 0 );
 
 has help => (
     is      => 'rw',
@@ -76,6 +68,8 @@ has blocking => (
     default => 0,
     traits  => [ 'NoGetopt' ],
 );
+
+
 
 sub run {
     my $self = shift;
@@ -112,7 +106,7 @@ sub run {
             binmode => 'utf8'
         ),
         blocking    => $self->blocking,
-        verbose     => $is_full_indexing ? $self->verbose : 0,
+        verbose     => $self->verbose,
     );
     $exporter->run();
 
@@ -131,6 +125,7 @@ sub run {
                 binmode => 'utf8'
             ),
             blocking    => $self->blocking,
+            verbose     => $self->verbose,
         );
         $exporter->run();
     }
@@ -171,11 +166,12 @@ sub run {
         $sth->execute( 
             $self->source =~ /biblio/ ? 'biblioserver' : 'authorityserver' );
     }
-
 }
+
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
+
 
 1;
 
@@ -189,18 +185,45 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 METHODS
+
+=head2 run
+
+Runs the indexing task.
+
+=HEAD1 SYNOPSIS
+
+ my $indexer = Koha::Contrib::Tamil::Indexer->new(
+   source => 'biblio',
+   select => 'queue'
+ );
+ $indexer->run();
+
+ my $indexer = Koha::Contrib::Tamil::Indexer->new(
+   source    => 'authority',
+   select    => 'all',
+   directory => '/tmp',
+   verbose   => 1,
+ );
+ $indexer->run();
+
+=HEAD1 DESCRIPTION
+
+Indexes Koha biblio/authority records, full indexing or queued record indexing.
 
 =head1 AUTHOR
 
-Frederic Demians <f.demians@tamil.fr>
+Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Frederic Demians.
+This software is Copyright (c) 2011 by Fréderic Démians.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut
 
