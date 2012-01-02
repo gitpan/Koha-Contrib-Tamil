@@ -6,8 +6,6 @@ use 5.010;
 
 use ExtUtils::MakeMaker 6.30;
 
-use File::ShareDir::Install;
-install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
@@ -20,7 +18,6 @@ my %WriteMakefileArgs = (
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30",
-    "File::ShareDir::Install" => "0.03",
     "Module::Build" => "0.3601"
   },
   "DISTNAME" => "Koha-Contrib-Tamil",
@@ -63,7 +60,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.004",
+  "VERSION" => "0.005",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -88,8 +85,5 @@ delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
 
 WriteMakefile(%WriteMakefileArgs);
 
-package
-MY;
-use File::ShareDir::Install qw(postamble);
 
 
