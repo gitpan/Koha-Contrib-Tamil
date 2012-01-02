@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::IndexerDaemon;
 {
-  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.003';
+  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.004';
 }
 # ABSTRACT: Class implementing a Koha records indexer daemon
 
@@ -11,7 +11,7 @@ use utf8;
 use AnyEvent;
 use Koha::Contrib::Tamil::Koha;
 use Koha::Contrib::Tamil::Indexer;
-use Locale::TextDomain 'fr.tamil.koha-tools';
+use Locale::TextDomain ('Koha-Contrib-Tamil');
 
 with 'MooseX::Getopt';
 
@@ -24,7 +24,7 @@ has conf => ( is => 'rw', isa => 'Str' );
 
 
 
-has directory => ( is => 'rw', isa     => 'Str' );
+has directory => ( is => 'rw', isa => 'Str' );
 
 
 
@@ -111,7 +111,7 @@ Koha::Contrib::Tamil::IndexerDaemon - Class implementing a Koha records indexer 
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::FromBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::FromBiblioTask::VERSION = '0.003';
+  $Koha::Contrib::Tamil::Authority::FromBiblioTask::VERSION = '0.004';
 }
 # ABSTRACT: Task extracting authorities from biblio records
 
@@ -12,7 +12,7 @@ use MARC::Record;
 use File::Temp qw( tempfile );
 use YAML::Syck;
 use List::Util qw( first );
-use Locale::TextDomain 'fr.tamil.koha-tools';
+use Locale::TextDomain 'Koha-Contrib-Tamil';
 
 
 extends 'Koha::Contrib::Tamil::Authority::Task';
@@ -122,7 +122,7 @@ Koha::Contrib::Tamil::Authority::FromBiblioTask - Task extracting authorities fr
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter;
 {
-  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.003';
+  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.004';
 }
 #ABSTRACT: RecordWriter - Base class for writing whatever records into whatever
 
@@ -42,7 +42,7 @@ Koha::Contrib::Tamil::RecordWriter - RecordWriter - Base class for writing whate
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

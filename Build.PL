@@ -13,6 +13,7 @@ my %module_build_args = (
   },
   "configure_requires" => {
     "ExtUtils::MakeMaker" => "6.30",
+    "File::ShareDir::Install" => "0.03",
     "Module::Build" => "0.3601"
   },
   "dist_abstract" => "Various scripts to manage Koha instances",
@@ -20,7 +21,7 @@ my %module_build_args = (
     "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>"
   ],
   "dist_name" => "Koha-Contrib-Tamil",
-  "dist_version" => "0.003",
+  "dist_version" => "0.004",
   "license" => "gpl",
   "module_name" => "Koha::Contrib::Tamil",
   "recommends" => {},
@@ -62,7 +63,10 @@ my %module_build_args = (
     "bin/koha-index",
     "bin/koha-cloud",
     "bin/koha-auth"
-  ]
+  ],
+  "share_dir" => {
+    "dist" => "share"
+  }
 );
 
 

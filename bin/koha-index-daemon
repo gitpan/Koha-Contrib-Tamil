@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.003';
+  $Main::VERSION = '0.004';
 }
 # PODNAME: koha-index-daemon
 # ABSTRACT: Insert/update/delete records into Koha Zebra server
@@ -20,13 +20,15 @@ Koha::Contrib::Tamil::IndexerDaemon->new_with_options();
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 koha-index-daemon - Insert/update/delete records into Koha Zebra server
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
@@ -43,8 +45,6 @@ Examine periodicaly zebraqueue table from a Koha instance and index
 bilbio/authority records. 
 
 Some info on daemon activity are logged in syslog.
-
-=encoding utf8
 
 =head1 OPTIONS
 

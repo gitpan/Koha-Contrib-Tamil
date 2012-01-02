@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::FileProcess;
 {
-  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.003';
+  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.004';
 }
 #ABSTRACT: FileProcess - Base class for file processing
 
@@ -9,7 +9,7 @@ use Moose;
 use diagnostics;
 use AnyEvent;
 use Koha::Contrib::Tamil::EchoWatcher;
-use Locale::TextDomain 'fr.tamil.koha-tools';
+use Locale::TextDomain 'Koha-Contrib-Tamil';
 
 with 'Koha::Contrib::Tamil::WatchableTask';
 
@@ -114,7 +114,7 @@ Koha::Contrib::Tamil::FileProcess - FileProcess - Base class for file processing
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

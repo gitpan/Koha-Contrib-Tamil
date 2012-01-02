@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.003';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.004';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -12,7 +12,7 @@ use Koha::Contrib::Tamil::RecordReader;
 use Koha::Contrib::Tamil::RecordWriter::File::Marcxml;
 use Koha::Contrib::Tamil::Conversion;
 use File::Path;
-use Locale::TextDomain 'fr.tamil.koha-tools';
+use Locale::TextDomain 'Koha-Contrib-Tamil';
 
 
 with 'MooseX::Getopt';
@@ -184,7 +184,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 METHODS
 
