@@ -4,11 +4,9 @@ author:
   - 'Frédéric Demians <f.demians@tamil.fr>'
 build_requires:
   FindBin: 0
-  Module::Build: 0.3601
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
-  Module::Build: 0.3601
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.110930'
 license: gpl
@@ -47,4 +45,4 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.005
+version: 0.006

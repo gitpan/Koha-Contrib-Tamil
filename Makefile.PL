@@ -13,12 +13,10 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>",
   "BUILD_REQUIRES" => {
     "FindBin" => 0,
-    "Module::Build" => "0.3601",
     "Test::More" => 0
   },
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30",
-    "Module::Build" => "0.3601"
+    "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "Koha-Contrib-Tamil",
   "EXE_FILES" => [
@@ -60,7 +58,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.005",
+  "VERSION" => "0.006",
   "test" => {
     "TESTS" => "t/*.t"
   }

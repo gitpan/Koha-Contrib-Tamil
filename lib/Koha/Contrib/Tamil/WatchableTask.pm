@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::WatchableTask;
 {
-  $Koha::Contrib::Tamil::WatchableTask::VERSION = '0.005';
+  $Koha::Contrib::Tamil::WatchableTask::VERSION = '0.006';
 }
 #ABSTRACT: Role for tasks which are watchable
 
@@ -26,7 +26,7 @@ Koha::Contrib::Tamil::WatchableTask - Role for tasks which are watchable
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 AUTHOR
 
