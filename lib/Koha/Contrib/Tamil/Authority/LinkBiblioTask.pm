@@ -1,18 +1,21 @@
 package Koha::Contrib::Tamil::Authority::LinkBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.007';
+  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.008';
 }
 # ABSTRACT: Task linking biblio records to authorities
 use Moose;
 
 extends 'Koha::Contrib::Tamil::Authority::Task';
 
+use 5.010;
+use utf8;
 use Carp;
 use Koha::Contrib::Tamil::Koha;
 use Koha::Contrib::Tamil::RecordReader;
 use C4::Context;
 use C4::Biblio;
 
+binmode( STDERR, ":utf8");
 
 has reader => ( is => 'rw', isa => 'Koha::Contrib::Tamil::RecordReader' );
 
@@ -91,12 +94,11 @@ sub process {
                             @ns ) );
                     }
                     else {
-                        binmode( STDOUT, ":utf8");
-                        print "ERROR: authority not found -- $query\n";
+                        print STDERR "ERROR: authority not found -- $query\n";
                     }
                     $rs->destroy();
                 };
-                print "ERROR: ZOOM ", $@, "\n" if $@;
+                print STDERR "ERROR: ZOOM ", $@, "\n" if $@;
             }
         }
     }
@@ -122,7 +124,7 @@ Koha::Contrib::Tamil::Authority::LinkBiblioTask - Task linking biblio records to
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

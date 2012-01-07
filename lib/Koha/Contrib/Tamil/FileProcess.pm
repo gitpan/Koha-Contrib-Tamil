@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::FileProcess;
 {
-  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.007';
+  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.008';
 }
 #ABSTRACT: FileProcess - Base class for file processing
 
@@ -114,7 +114,7 @@ Koha::Contrib::Tamil::FileProcess - FileProcess - Base class for file processing
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 
