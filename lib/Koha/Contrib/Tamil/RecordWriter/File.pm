@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter::File;
 {
-  $Koha::Contrib::Tamil::RecordWriter::File::VERSION = '0.006';
+  $Koha::Contrib::Tamil::RecordWriter::File::VERSION = '0.007';
 }
 #ABSTRACT: Records writer into a file base class
 
@@ -52,7 +52,7 @@ Koha::Contrib::Tamil::RecordWriter::File - Records writer into a file base class
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 AUTHOR
 
@@ -64,7 +64,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

@@ -7,8 +7,9 @@ build_requires:
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
+  File::ShareDir::Install: 0.03
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640'
 license: gpl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -45,4 +46,4 @@ requires:
   strict: 0
   utf8: 0
   warnings: 0
-version: 0.006
+version: 0.007

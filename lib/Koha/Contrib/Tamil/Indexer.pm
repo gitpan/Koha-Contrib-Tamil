@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.006';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.007';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -184,7 +184,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 METHODS
 
@@ -222,7 +222,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

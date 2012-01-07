@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::LogProcess;
 {
-  $Koha::Contrib::Tamil::LogProcess::VERSION = '0.006';
+  $Koha::Contrib::Tamil::LogProcess::VERSION = '0.007';
 }
 # ABSTRACT: Base class for process loger
 use Moose;
@@ -49,7 +49,7 @@ Koha::Contrib::Tamil::LogProcess - Base class for process loger
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 NAME
 
@@ -74,7 +74,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

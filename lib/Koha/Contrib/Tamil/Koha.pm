@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Koha;
 {
-  $Koha::Contrib::Tamil::Koha::VERSION = '0.006';
+  $Koha::Contrib::Tamil::Koha::VERSION = '0.007';
 }
 #ABSTRACT: Class exposing info about a Koha instance.
 
@@ -168,7 +168,7 @@ Koha::Contrib::Tamil::Koha - Class exposing info about a Koha instance.
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 ATTRIBUTES
 
@@ -220,7 +220,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

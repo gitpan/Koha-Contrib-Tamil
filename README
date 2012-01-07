@@ -1,14 +1,25 @@
+NAME
+    Koha::Contrib::Tamil - Various scripts to manage Koha instances
 
+VERSION
+    version 0.007
 
-This archive contains the distribution Koha-Contrib-Tamil,
-version 0.006:
+DESCRIPTION
+    This module contains Tamil Koha Open Source ILS contribution scripts.
+    Those scripts are used to manage Koha instances.
 
-  Various scripts to manage Koha instances
+SEE ALSO
+    *   koha-index
 
-This software is Copyright (c) 2011 by Fréderic Démians.
+    *   koha-index-daemon
 
-This is free software, licensed under:
+AUTHOR
+    Frédéric Demians <f.demians@tamil.fr>
 
-  The GNU General Public License, Version 2, June 1991
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2011 by Fréderic Démians.
 
+    This is free software, licensed under:
+
+      The GNU General Public License, Version 3, June 2007
 

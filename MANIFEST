@@ -1,3 +1,4 @@
+Changes
 LICENSE
 MANIFEST
 META.yml
@@ -33,13 +34,18 @@ lib/Koha/Contrib/Tamil/RecordWriter/File/Iso2709.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Marcxml.pm
 lib/Koha/Contrib/Tamil/WatchableTask.pm
 lib/Koha/Contrib/Tamil/Zebra/Clouder.pm
+lib/LocaleData/de/LC_MESSAGES/Koha-Contrib-Tamil.mo
 lib/LocaleData/fr/LC_MESSAGES/Koha-Contrib-Tamil.mo
 po/Koha-Contrib-Tamil.pot
 po/Koha.pot
 po/Makefile
 po/PACKAGE
 po/POTFILES.in
+po/de.mo
+po/de.po
 po/fr.mo
 po/fr.po
+share/etc/auth-marc21.conf
+share/etc/auth-unimarc.conf
 t/00.load.t
 weaver.ini

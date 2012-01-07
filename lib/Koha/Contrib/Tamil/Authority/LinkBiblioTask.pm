@@ -1,11 +1,18 @@
 package Koha::Contrib::Tamil::Authority::LinkBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.006';
+  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.007';
 }
 # ABSTRACT: Task linking biblio records to authorities
 use Moose;
 
 extends 'Koha::Contrib::Tamil::Authority::Task';
+
+use Carp;
+use Koha::Contrib::Tamil::Koha;
+use Koha::Contrib::Tamil::RecordReader;
+use C4::Context;
+use C4::Biblio;
+
 
 has reader => ( is => 'rw', isa => 'Koha::Contrib::Tamil::RecordReader' );
 
@@ -14,14 +21,6 @@ has koha => (
     default => sub { Koha::Contrib::Tamil::Koha->new() }
 );
 
-
-
-
-use Carp;
-use Koha::Contrib::Tamil::Koha;
-use Koha::Contrib::Tamil::RecordReader;
-use C4::Context;
-use C4::Biblio;
 
 
 sub run {
@@ -123,7 +122,7 @@ Koha::Contrib::Tamil::Authority::LinkBiblioTask - Task linking biblio records to
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 AUTHOR
 
@@ -135,7 +134,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

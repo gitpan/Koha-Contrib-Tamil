@@ -2,7 +2,7 @@
 
 package main;
 {
-  $main::VERSION = '0.006';
+  $main::VERSION = '0.007';
 }
 # PODNAME: koha-auth
 # ABSTRACT: Generate authorities from bibliographic records
@@ -82,7 +82,6 @@ sub usage {
 
 
 
-
 __END__
 =pod
 
@@ -94,7 +93,12 @@ koha-auth - Generate authorities from bibliographic records
 
 =head1 VERSION
 
-version 0.006
+version 0.007
+
+=head1 DESCRIPTION
+
+With this script, it's possible to extract authorities from Koha bibliographic
+records, load them into the authorities table, and link authorities to biblios.
 
 =head1 USAGE
 
@@ -145,6 +149,10 @@ Authorities configuration file looks like that:
    - 712
  --- 
 
+Two sample configuration files are provided with this distribution and can be
+found in the dist local directory: F<auth-marc21.conf> and
+F<auth-unimarc.conf>.
+
 =head1 AUTHOR
 
 Frédéric Demians <f.demians@tamil.fr>
@@ -155,7 +163,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

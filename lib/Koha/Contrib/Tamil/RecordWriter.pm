@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter;
 {
-  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.006';
+  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.007';
 }
 #ABSTRACT: RecordWriter - Base class for writing whatever records into whatever
 
@@ -42,7 +42,7 @@ Koha::Contrib::Tamil::RecordWriter - RecordWriter - Base class for writing whate
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 DESCRIPTION
 
@@ -78,7 +78,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 

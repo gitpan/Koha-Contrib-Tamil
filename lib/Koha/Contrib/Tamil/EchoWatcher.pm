@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::EchoWatcher;
 {
-  $Koha::Contrib::Tamil::EchoWatcher::VERSION = '0.006';
+  $Koha::Contrib::Tamil::EchoWatcher::VERSION = '0.007';
 }
 # ABSTRACT: A watch echoing a process messages
 
@@ -50,7 +50,7 @@ Koha::Contrib::Tamil::EchoWatcher - A watch echoing a process messages
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 AUTHOR
 
@@ -62,7 +62,7 @@ This software is Copyright (c) 2011 by Fréderic Démians.
 
 This is free software, licensed under:
 
-  The GNU General Public License, Version 2, June 1991
+  The GNU General Public License, Version 3, June 2007
 
 =cut
 
