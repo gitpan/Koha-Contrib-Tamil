@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.008';
+  $Main::VERSION = '0.009';
 }
 # PODNAME: koha-index
 # ABSTRACT: Index Koha biblio/authority records
@@ -34,7 +34,7 @@ koha-index - Index Koha biblio/authority records
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 

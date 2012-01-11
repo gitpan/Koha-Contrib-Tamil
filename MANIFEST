@@ -9,9 +9,6 @@ bin/koha-cloud
 bin/koha-index
 bin/koha-index-daemon
 dist.ini
-etc/auth-marc21.conf
-etc/auth-unimarc.conf
-etc/koha-index-daemon.conf
 lib/Koha/Contrib/Tamil.pm
 lib/Koha/Contrib/Tamil/AuthoritiesLoader.pm
 lib/Koha/Contrib/Tamil/Authority/FromBiblioTask.pm

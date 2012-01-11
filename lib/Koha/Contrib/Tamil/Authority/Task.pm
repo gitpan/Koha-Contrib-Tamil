@@ -1,12 +1,14 @@
 package Koha::Contrib::Tamil::Authority::Task;
 {
-  $Koha::Contrib::Tamil::Authority::Task::VERSION = '0.008';
+  $Koha::Contrib::Tamil::Authority::Task::VERSION = '0.009';
 }
 # ABSTRACT: Base class for managing authorities manipulations
 use Moose;
 
 extends 'Koha::Contrib::Tamil::FileProcess';
 
+use 5.010;
+use utf8;
 use Carp;
 use YAML::Syck;
 
@@ -42,7 +44,7 @@ Koha::Contrib::Tamil::Authority::Task - Base class for managing authorities mani
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 AUTHOR
 
