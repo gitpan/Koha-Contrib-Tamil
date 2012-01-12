@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.009';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.010';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -232,7 +232,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSYS
 

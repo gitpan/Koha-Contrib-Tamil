@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.009';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.010';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -146,7 +146,7 @@ sub run {
     my $cmd_base = "zebraidx -c " . $zconfig;
     $cmd_base   .= " -n" if $is_full_indexing; # No shadow: no indexing daemon
     $cmd_base   .= $self->verbose ? " -v warning,log" : " -v none";
-    $cmd_base   .= " -g marcxml";
+    $cmd_base   .= $is_biblio_indexing ? " -g marcxml" : " -g iso2709";
     $cmd_base   .= " -d $db_name";
 
     if ( $is_full_indexing ) {
@@ -191,7 +191,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 METHODS
 

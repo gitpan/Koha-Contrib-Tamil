@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::IndexerDaemon;
 {
-  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.009';
+  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.010';
 }
 # ABSTRACT: Class implementing a Koha records indexer daemon
 
@@ -111,7 +111,7 @@ Koha::Contrib::Tamil::IndexerDaemon - Class implementing a Koha records indexer 
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 
