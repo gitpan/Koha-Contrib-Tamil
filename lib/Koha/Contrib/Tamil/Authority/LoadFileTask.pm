@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::LoadFileTask;
 {
-  $Koha::Contrib::Tamil::Authority::LoadFileTask::VERSION = '0.010';
+  $Koha::Contrib::Tamil::Authority::LoadFileTask::VERSION = '0.011';
 }
 # ABSTRACT: Task loading authorities into a Koha instance
 
@@ -90,8 +90,7 @@ sub process {
                 $authority->{authtag}, '', '', @subfields);
             $record->append_fields($field);
             $self->log->info( "$authcode: " . $field->as_formatted() . "\n" );
-            my ($authid) = AddAuthority($record, 0, $authcode)
-                if ($self->doit);
+            AddAuthority($record, 0, $authcode) if $self->doit;
     	}
         return 1;
     }
@@ -115,7 +114,7 @@ Koha::Contrib::Tamil::Authority::LoadFileTask - Task loading authorities into a 
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 AUTHOR
 

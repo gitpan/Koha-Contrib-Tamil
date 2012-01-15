@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Koha;
 {
-  $Koha::Contrib::Tamil::Koha::VERSION = '0.010';
+  $Koha::Contrib::Tamil::Koha::VERSION = '0.011';
 }
 #ABSTRACT: Class exposing info about a Koha instance.
 
@@ -136,7 +136,7 @@ sub get_biblio_marc {
         "SELECT marcxml FROM biblioitems WHERE biblionumber=? ");
     $sth->execute( $id );
     my ($marcxml) = $sth->fetchrow;
-    return undef unless $marcxml;
+    return unless $marcxml;
     $marcxml =~
 s/[^\x09\x0A\x0D\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}\x{10000}-\x{10FFFF}]//g;
     #MARC::File::XML->default_record_format(
@@ -148,7 +148,7 @@ s/[^\x09\x0A\x0D\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}\x{10000}-\x{10FFFF}]//g;
         if ($@) { warn " problem with: $id : $@ \n$marcxml"; }
         return $record;
     }   
-    return undef;
+    return;
 }
 
 
@@ -168,7 +168,7 @@ Koha::Contrib::Tamil::Koha - Class exposing info about a Koha instance.
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 ATTRIBUTES
 

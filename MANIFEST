@@ -8,6 +8,7 @@ bin/koha-auth
 bin/koha-cloud
 bin/koha-index
 bin/koha-index-daemon
+bin/koha-sitemap
 dist.ini
 lib/Koha/Contrib/Tamil.pm
 lib/Koha/Contrib/Tamil/AuthoritiesLoader.pm
@@ -29,6 +30,8 @@ lib/Koha/Contrib/Tamil/RecordWriter.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Iso2709.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Marcxml.pm
+lib/Koha/Contrib/Tamil/Sitemaper.pm
+lib/Koha/Contrib/Tamil/Sitemaper/Writer.pm
 lib/Koha/Contrib/Tamil/WatchableTask.pm
 lib/Koha/Contrib/Tamil/Zebra/Clouder.pm
 lib/LocaleData/de/LC_MESSAGES/Koha-Contrib-Tamil.mo
@@ -44,5 +47,5 @@ po/fr.mo
 po/fr.po
 share/etc/auth-marc21.conf
 share/etc/auth-unimarc.conf
-t/00.load.t
+t/00-compile.t
 weaver.ini

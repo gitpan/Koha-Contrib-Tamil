@@ -14,7 +14,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Various scripts to manage Koha instances",
   "AUTHOR" => "Fr\303\251d\303\251ric Demians <f.demians\@tamil.fr>",
   "BUILD_REQUIRES" => {
-    "FindBin" => 0,
+    "File::Find" => 0,
     "Test::More" => 0
   },
   "CONFIGURE_REQUIRES" => {
@@ -26,6 +26,7 @@ my %WriteMakefileArgs = (
     "bin/koha-index-daemon",
     "bin/koha-index",
     "bin/koha-cloud",
+    "bin/koha-sitemap",
     "bin/koha-auth"
   ],
   "LICENSE" => "gpl",
@@ -34,6 +35,7 @@ my %WriteMakefileArgs = (
     "AnyEvent" => 0,
     "Carp" => 0,
     "DBI" => 0,
+    "DateTime" => 0,
     "Fatal" => 0,
     "File::Path" => 0,
     "File::Temp" => 0,
@@ -53,6 +55,7 @@ my %WriteMakefileArgs = (
     "MooseX::Getopt" => 0,
     "Pod::Usage" => 0,
     "XML::Simple" => 0,
+    "XML::Writer" => 0,
     "YAML" => 0,
     "YAML::Syck" => 0,
     "ZOOM" => 0,
@@ -61,7 +64,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.010",
+  "VERSION" => "0.011",
   "test" => {
     "TESTS" => "t/*.t"
   }

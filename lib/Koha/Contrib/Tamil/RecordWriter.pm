@@ -1,11 +1,10 @@
 package Koha::Contrib::Tamil::RecordWriter;
 {
-  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.010';
+  $Koha::Contrib::Tamil::RecordWriter::VERSION = '0.011';
 }
 #ABSTRACT: RecordWriter - Base class for writing whatever records into whatever
 
 use Moose;
-
 
 has count => (
     is => 'rw',
@@ -42,7 +41,7 @@ Koha::Contrib::Tamil::RecordWriter - RecordWriter - Base class for writing whate
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 DESCRIPTION
 

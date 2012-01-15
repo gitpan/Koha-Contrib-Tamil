@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.010';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.011';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -63,6 +63,7 @@ has itemtag => ( is => 'rw' );
 # FIXME: a KohaRecord class should contain this information 
 has frameworkcode => ( is => 'rw', isa => 'Str' );
 
+
 sub BUILD {
     my $self = shift;
     my $dbh  = $self->koha->dbh;
@@ -93,13 +94,22 @@ sub BUILD {
     my $sth = $self->koha->dbh->prepare( $sql );
     $sth->execute();
     $self->sth( $sth );
+
+    __PACKAGE__->meta->add_method( 'get' =>
+        $self->source =~ /biblio/i
+            ? $self->xml
+              ? \&get_biblio_xml
+              : \&get_biblio_marc
+            : $self->xml
+              ? \&get_auth_xml
+              : \&get_auth_marc
+    );
 }
 
 
 
 sub read {
     my $self = shift;
-
     while ( my ($id) = $self->sth->fetchrow ) {
         if ( my $record = $self->get( $id ) ) {
             $self->SUPER::read();
@@ -110,18 +120,6 @@ sub read {
     return 0;
 }
 
-
-sub get {
-    my ( $self, $id ) = @_;
-
-    $self->source =~ /biblio/i
-        ? $self->xml 
-          ? $self->get_biblio_xml( $id )
-          : $self->koha->get_biblio_marc( $id )
-        : $self->xml
-          ? $self->get_auth_xml( $id )
-          : $self->get_auth_marc( $id );
-}
 
 
 sub get_biblio_xml {
@@ -165,6 +163,8 @@ sub get_biblio_xml {
 }
 
 
+# Same as Koha::Contrib::Tamil::get_biblio_marc, but if the record doesn't
+# exist in biblioitems, it is search in deletedbiblioitems.
 sub get_biblio_marc {
     my ( $self, $id ) = @_;
 
@@ -189,7 +189,7 @@ sub get_biblio_marc {
         if ($@) { warn " problem with: $id : $@ \n$marcxml"; }
         return $record;
     }
-    return undef;
+    return;
 }
 
 
@@ -216,7 +216,6 @@ sub get_auth_xml {
 
 
 no Moose;
-__PACKAGE__->meta->make_immutable;
 1;
 
    
@@ -232,7 +231,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 SYNOPSYS
 
