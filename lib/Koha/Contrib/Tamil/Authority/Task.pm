@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::Task;
 {
-  $Koha::Contrib::Tamil::Authority::Task::VERSION = '0.011';
+  $Koha::Contrib::Tamil::Authority::Task::VERSION = '0.012';
 }
 # ABSTRACT: Base class for managing authorities manipulations
 use Moose;
@@ -44,7 +44,7 @@ Koha::Contrib::Tamil::Authority::Task - Base class for managing authorities mani
 
 =head1 VERSION
 
-version 0.011
+version 0.012
 
 =head1 AUTHOR
 

@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.011';
+  $Main::VERSION = '0.012';
 }
 
 # PODNAME: koha-sitemap
@@ -13,11 +13,8 @@ use utf8;
 use strict;
 use warnings;
 use Carp;
-use YAML::Syck;
 use Pod::Usage;
 use Getopt::Long;
-use Fatal qw( open );
-use Koha::Contrib::Tamil::Koha;
 use Koha::Contrib::Tamil::Sitemaper;
 
 
@@ -57,12 +54,12 @@ koha-sitemap - Creates sitemap files for a whole Koha DB
 
 =head1 VERSION
 
-version 0.011
+version 0.012
 
 =head1 DESCRIPTION
 
 Process all biblio records from a Koha instance and generate Sitemap files
-complying with this protocol as described on http://sitemaps.org. The goal of
+complying with this protocol as described on L<http://sitemaps.org>. The goal of
 this script is to be able to provide to search engines direct access to biblio
 records. It avoid leaving search engine browsing Koha OPAC and so generating
 a lot of traffic, and workload, for a bad result. 
@@ -72,7 +69,7 @@ multiples files. Each file contains at most 50,000 urls, and is named
 F<sitemapXXXX.xml>.
 
 The files must be stored on Koha OPAC root directoty, ie
-F<<koha-root>/koha-tmpl/>. Place also in this directory a <robots.txt> file
+F<<koha-root>/koha-tmpl/>. Place also in this directory a F<robots.txt> file
 like this one:
 
  Sitemap: sitemapindex.xml

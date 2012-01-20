@@ -1,6 +1,7 @@
 Changes
 LICENSE
 MANIFEST
+MANIFEST.SKIP
 META.yml
 Makefile.PL
 README
@@ -36,15 +37,6 @@ lib/Koha/Contrib/Tamil/WatchableTask.pm
 lib/Koha/Contrib/Tamil/Zebra/Clouder.pm
 lib/LocaleData/de/LC_MESSAGES/Koha-Contrib-Tamil.mo
 lib/LocaleData/fr/LC_MESSAGES/Koha-Contrib-Tamil.mo
-po/Koha-Contrib-Tamil.pot
-po/Koha.pot
-po/Makefile
-po/PACKAGE
-po/POTFILES.in
-po/de.mo
-po/de.po
-po/fr.mo
-po/fr.po
 share/etc/auth-marc21.conf
 share/etc/auth-unimarc.conf
 t/00-compile.t

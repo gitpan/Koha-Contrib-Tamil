@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::FileProcess;
 {
-  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.011';
+  $Koha::Contrib::Tamil::FileProcess::VERSION = '0.012';
 }
 #ABSTRACT: FileProcess - Base class for file processing
 
@@ -57,10 +57,9 @@ sub run_task {
     $self->start_process();
 
     if ( $self->verbose ) {
-        my $watcher = Koha::Contrib::Tamil::EchoWatcher->new(
-            delay => 1, action => $self );
-        $self->watcher( $watcher );
-        $watcher->start();
+        $self->watcher( Koha::Contrib::Tamil::EchoWatcher->new(
+            delay => 1, action => $self ) ) unless $self->watcher;
+        $self->watcher->start();
     }
 
     my $end_run = AnyEvent->condvar;
@@ -88,6 +87,7 @@ sub start_message {
 sub process {
     my $self = shift;
     $self->count( $self->count + 1 );
+    return 1;
 }
 
 
@@ -126,7 +126,7 @@ Koha::Contrib::Tamil::FileProcess - FileProcess - Base class for file processing
 
 =head1 VERSION
 
-version 0.011
+version 0.012
 
 =head1 AUTHOR
 
