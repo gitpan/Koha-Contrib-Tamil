@@ -1,12 +1,10 @@
 package Koha::Contrib::Tamil::Conversion;
 {
-  $Koha::Contrib::Tamil::Conversion::VERSION = '0.012';
+  $Koha::Contrib::Tamil::Conversion::VERSION = '0.013';
 }
 # ABSTRACT: Base class for conversion type subclasses
 
 use Moose;
-
-use Koha::Contrib::Tamil::Converter;
 
 extends 'Koha::Contrib::Tamil::FileProcess';
 
@@ -73,7 +71,7 @@ Koha::Contrib::Tamil::Conversion - Base class for conversion type subclasses
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 AUTHOR
 

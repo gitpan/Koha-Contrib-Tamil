@@ -2,13 +2,12 @@
 
 use strict;
 use warnings;
-
 use Test::More;
-
-
-
 use File::Find;
 use File::Temp qw{ tempdir };
+
+eval { require C4::Koha; };
+plan skip_all => 'Test irrelevant without Koha library being available' if $@;
 
 my @modules;
 find(
