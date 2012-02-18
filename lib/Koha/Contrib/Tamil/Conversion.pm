@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Conversion;
 {
-  $Koha::Contrib::Tamil::Conversion::VERSION = '0.013';
+  $Koha::Contrib::Tamil::Conversion::VERSION = '0.014';
 }
 # ABSTRACT: Base class for conversion type subclasses
 
@@ -22,14 +22,15 @@ has writer => (
 );
 
 # Le converter qui transforme les notices en notices MARC
-has converter => ( isa => 'Koha::Contrib::Tamil::Converter', is => 'rw' );
-
+#has converter => ( isa => 'Koha::Contrib::Tamil::Converter', is => 'rw' );
+has converter => ( is => 'rw' );
 
 
 sub run  {
     my $self = shift;
     $self->writer->begin();
     $self->SUPER::run();
+    $self->writer->end();
 };
 
 
@@ -71,7 +72,7 @@ Koha::Contrib::Tamil::Conversion - Base class for conversion type subclasses
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 AUTHOR
 

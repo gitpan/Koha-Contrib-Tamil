@@ -26,9 +26,6 @@ lib/Koha/Contrib/Tamil/IndexerDaemon.pm
 lib/Koha/Contrib/Tamil/Koha.pm
 lib/Koha/Contrib/Tamil/LogProcess.pm
 lib/Koha/Contrib/Tamil/RecordReader.pm
-lib/Koha/Contrib/Tamil/RecordReaderBase.pm
-lib/Koha/Contrib/Tamil/RecordWriter.pm
-lib/Koha/Contrib/Tamil/RecordWriter/File.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Iso2709.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Marcxml.pm
 lib/Koha/Contrib/Tamil/Sitemaper.pm

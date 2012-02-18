@@ -41,6 +41,7 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "Getopt::Long" => 0,
     "IO::File" => 0,
+    "Koha::Contrib::Tamil::RecordWriter::File" => 0,
     "List::Util" => 0,
     "Locale::TextDomain" => 0,
     "Log::Dispatch" => 0,
@@ -53,6 +54,8 @@ my %WriteMakefileArgs = (
     "Moose::Role" => 0,
     "Moose::Util::TypeConstraints" => 0,
     "MooseX::Getopt" => 0,
+    "MooseX::RW::Reader" => 0,
+    "MooseX::RW::Writer::File" => 0,
     "Pod::Usage" => 0,
     "XML::Simple" => 0,
     "XML::Writer" => 0,
@@ -64,7 +67,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.013",
+  "VERSION" => "0.014",
   "test" => {
     "TESTS" => "t/*.t"
   }

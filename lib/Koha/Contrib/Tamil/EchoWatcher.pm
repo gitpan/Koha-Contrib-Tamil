@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::EchoWatcher;
 {
-  $Koha::Contrib::Tamil::EchoWatcher::VERSION = '0.013';
+  $Koha::Contrib::Tamil::EchoWatcher::VERSION = '0.014';
 }
 # ABSTRACT: A watch echoing a process messages
 
@@ -50,7 +50,7 @@ Koha::Contrib::Tamil::EchoWatcher - A watch echoing a process messages
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 AUTHOR
 

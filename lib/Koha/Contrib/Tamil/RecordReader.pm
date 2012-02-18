@@ -1,12 +1,13 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.013';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.014';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
 use Moose;
 
-extends 'Koha::Contrib::Tamil::RecordReaderBase';
+with 'MooseX::RW::Reader';
+
 
 use Moose::Util::TypeConstraints;
 
@@ -112,7 +113,7 @@ sub read {
     my $self = shift;
     while ( my ($id) = $self->sth->fetchrow ) {
         if ( my $record = $self->get( $id ) ) {
-            $self->SUPER::read();
+            $self->count($self->count+1);
             $self->id( $id );
             return $record;
         }
@@ -231,7 +232,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 SYNOPSYS
 
