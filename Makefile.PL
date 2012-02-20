@@ -33,6 +33,8 @@ my %WriteMakefileArgs = (
   "NAME" => "Koha::Contrib::Tamil",
   "PREREQ_PM" => {
     "AnyEvent" => 0,
+    "AnyEvent::Processor" => 0,
+    "AnyEvent::Processor::Conversion" => 0,
     "Carp" => 0,
     "DBI" => 0,
     "DateTime" => 0,
@@ -51,7 +53,6 @@ my %WriteMakefileArgs = (
     "MARC::File::XML" => 0,
     "MARC::Record" => 0,
     "Moose" => 0,
-    "Moose::Role" => 0,
     "Moose::Util::TypeConstraints" => 0,
     "MooseX::Getopt" => 0,
     "MooseX::RW::Reader" => 0,
@@ -67,7 +68,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.014",
+  "VERSION" => "0.015",
   "test" => {
     "TESTS" => "t/*.t"
   }

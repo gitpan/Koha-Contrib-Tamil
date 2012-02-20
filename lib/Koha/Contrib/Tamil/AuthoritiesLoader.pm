@@ -1,12 +1,12 @@
 package Koha::Contrib::Tamil::AuthoritiesLoader;
 {
-  $Koha::Contrib::Tamil::AuthoritiesLoader::VERSION = '0.014';
+  $Koha::Contrib::Tamil::AuthoritiesLoader::VERSION = '0.015';
 }
 #ABSTRACT: Authorities loader into a Koha instance
 
 use Moose;
 
-extends 'Koha::Contrib::Tamil::FileProcess';
+extends 'AnyEvent::Processor';
 
 use Carp;
 use IO::File;
@@ -108,7 +108,7 @@ Koha::Contrib::Tamil::AuthoritiesLoader - Authorities loader into a Koha instanc
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 AUTHOR
 

@@ -1,13 +1,13 @@
 package Koha::Contrib::Tamil::Zebra::Clouder;
 {
-  $Koha::Contrib::Tamil::Zebra::Clouder::VERSION = '0.014';
+  $Koha::Contrib::Tamil::Zebra::Clouder::VERSION = '0.015';
 }
 # ABSTRACT: Class generating keywords clouds from Koha Zebra indexes
 
 use Moose;
 use Carp;
 
-extends 'Koha::Contrib::Tamil::FileProcess';
+extends 'AnyEvent::Processor';
 
 my $MAX_OCCURENCE = 1000000000;
 
@@ -303,7 +303,7 @@ Koha::Contrib::Tamil::Zebra::Clouder - Class generating keywords clouds from Koh
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 AUTHOR
 

@@ -1,12 +1,12 @@
 package Koha::Contrib::Tamil::Sitemaper;
 {
-  $Koha::Contrib::Tamil::Sitemaper::VERSION = '0.014';
+  $Koha::Contrib::Tamil::Sitemaper::VERSION = '0.015';
 }
 # ABSTRACT: Class building Sitemap files for a Koha DB
 
 use Moose;
 
-extends 'Koha::Contrib::Tamil::FileProcess';
+extends 'AnyEvent::Processor';
 
 use Koha::Contrib::Tamil::Koha;
 use Koha::Contrib::Tamil::Sitemaper::Writer;
@@ -86,7 +86,7 @@ Koha::Contrib::Tamil::Sitemaper - Class building Sitemap files for a Koha DB
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =HEAD1 SYNOPSIS
 
