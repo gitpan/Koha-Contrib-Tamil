@@ -30,15 +30,13 @@ requires:
   Koha::Contrib::Tamil::RecordWriter::File: 0
   List::Util: 0
   Locale::TextDomain: 0
-  Log::Dispatch: 0
-  Log::Dispatch::File: 0
-  Log::Dispatch::Screen: 0
   MARC::Batch: 0
   MARC::File::XML: 0
   MARC::Record: 0
   Moose: 0
   Moose::Util::TypeConstraints: 0
   MooseX::Getopt: 0
+  MooseX::LogDispatch: 0
   MooseX::RW::Reader: 0
   MooseX::RW::Writer::File: 0
   Pod::Usage: 0
@@ -54,4 +52,4 @@ requires:
   warnings: 0
 resources:
   repository: http://git.tamil.fr/git/Koha-Contrib-Tamil
-version: 0.015
+version: 0.016

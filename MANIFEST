@@ -20,7 +20,6 @@ lib/Koha/Contrib/Tamil/Authority/Task.pm
 lib/Koha/Contrib/Tamil/Indexer.pm
 lib/Koha/Contrib/Tamil/IndexerDaemon.pm
 lib/Koha/Contrib/Tamil/Koha.pm
-lib/Koha/Contrib/Tamil/LogProcess.pm
 lib/Koha/Contrib/Tamil/RecordReader.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Iso2709.pm
 lib/Koha/Contrib/Tamil/RecordWriter/File/Marcxml.pm

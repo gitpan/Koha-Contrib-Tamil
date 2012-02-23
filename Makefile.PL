@@ -46,15 +46,13 @@ my %WriteMakefileArgs = (
     "Koha::Contrib::Tamil::RecordWriter::File" => 0,
     "List::Util" => 0,
     "Locale::TextDomain" => 0,
-    "Log::Dispatch" => 0,
-    "Log::Dispatch::File" => 0,
-    "Log::Dispatch::Screen" => 0,
     "MARC::Batch" => 0,
     "MARC::File::XML" => 0,
     "MARC::Record" => 0,
     "Moose" => 0,
     "Moose::Util::TypeConstraints" => 0,
     "MooseX::Getopt" => 0,
+    "MooseX::LogDispatch" => 0,
     "MooseX::RW::Reader" => 0,
     "MooseX::RW::Writer::File" => 0,
     "Pod::Usage" => 0,
@@ -68,7 +66,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.015",
+  "VERSION" => "0.016",
   "test" => {
     "TESTS" => "t/*.t"
   }

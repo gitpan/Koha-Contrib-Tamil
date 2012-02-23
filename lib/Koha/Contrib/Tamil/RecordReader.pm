@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.015';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.016';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -232,7 +232,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =head1 SYNOPSYS
 
@@ -261,7 +261,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Fréderic Démians.
+This software is Copyright (c) 2012 by Fréderic Démians.
 
 This is free software, licensed under:
 

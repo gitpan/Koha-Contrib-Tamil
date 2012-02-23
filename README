@@ -2,7 +2,7 @@ NAME
     Koha::Contrib::Tamil - Various scripts to manage Koha instances
 
 VERSION
-    version 0.015
+    version 0.016
 
 DESCRIPTION
     This module contains Tamil Koha Open Source ILS contribution scripts.
@@ -17,7 +17,7 @@ AUTHOR
     Frédéric Demians <f.demians@tamil.fr>
 
 COPYRIGHT AND LICENSE
-    This software is Copyright (c) 2011 by Fréderic Démians.
+    This software is Copyright (c) 2012 by Fréderic Démians.
 
     This is free software, licensed under:
 

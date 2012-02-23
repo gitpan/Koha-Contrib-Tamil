@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::LinkBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.015';
+  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.016';
 }
 # ABSTRACT: Task linking biblio records to authorities
 use Moose;
@@ -155,7 +155,7 @@ Koha::Contrib::Tamil::Authority::LinkBiblioTask - Task linking biblio records to
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =head1 METHODS
 
@@ -174,7 +174,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Fréderic Démians.
+This software is Copyright (c) 2012 by Fréderic Démians.
 
 This is free software, licensed under:
 

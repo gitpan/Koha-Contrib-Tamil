@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Sitemaper;
 {
-  $Koha::Contrib::Tamil::Sitemaper::VERSION = '0.015';
+  $Koha::Contrib::Tamil::Sitemaper::VERSION = '0.016';
 }
 # ABSTRACT: Class building Sitemap files for a Koha DB
 
@@ -86,7 +86,7 @@ Koha::Contrib::Tamil::Sitemaper - Class building Sitemap files for a Koha DB
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =HEAD1 SYNOPSIS
 
@@ -101,7 +101,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Fréderic Démians.
+This software is Copyright (c) 2012 by Fréderic Démians.
 
 This is free software, licensed under:
 

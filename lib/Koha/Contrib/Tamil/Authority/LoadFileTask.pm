@@ -1,12 +1,15 @@
 package Koha::Contrib::Tamil::Authority::LoadFileTask;
 {
-  $Koha::Contrib::Tamil::Authority::LoadFileTask::VERSION = '0.015';
+  $Koha::Contrib::Tamil::Authority::LoadFileTask::VERSION = '0.016';
 }
 # ABSTRACT: Task loading authorities into a Koha instance
 
 use Moose;
 
-extends 'Koha::Contrib::Tamil::Authority::Task', 'Koha::Contrib::Tamil::LogProcess';
+extends 'Koha::Contrib::Tamil::Authority::Task';
+
+with 'MooseX::LogDispatch';
+
  
 use Locale::TextDomain 'Koha-Contrib-Tamil';
 
@@ -29,6 +32,26 @@ use C4::AuthoritiesMarc;
 use List::Util qw( first );
 
 
+has log_dispatch_conf => (
+    is => 'ro',
+    isa => 'HashRef',
+    lazy => 1,
+    required => 1,
+    default => sub {
+        {
+            class     => 'Log::Dispatch::Screen',
+            min_level => 'notice',
+            stderr    => 1,
+        },
+        {
+            class     => 'Log::Dispatch::File',
+            min_level => 'debug',
+            filename  => 'koha_auth_load.log',
+            binmode   => ':utf8',
+            #format    => '[%p] %m at %F line %L%n',
+        },
+    },
+);
 
 
 sub run {
@@ -43,7 +66,7 @@ sub run {
     $self->dbh( $dbh );
 
     if ( $self->truncate ) {
-        $self->log->info( __"Truncate table: auth_header\n" );
+        $self->logger->info( __"Truncate table: auth_header\n" );
         $dbh->do( "truncate auth_header" );
     }
 
@@ -55,10 +78,11 @@ sub start_message {
     my $self = shift;
     my $test = $self->doit ? "" : __"** TEST **";
     my $file = $self->file;
-    $self->log->notice(
+    $self->logger->notice(
         __x("Load authorities into Koha from a file {test_flag}\n" .
             "  source: {source_file}\n" .
             "  target: Koha DB\n",
+            test_flag => $test,
             source_file => $file) );
 }
 
@@ -89,7 +113,7 @@ sub process {
             my $field = MARC::Field->new(
                 $authority->{authtag}, '', '', @subfields);
             $record->append_fields($field);
-            $self->log->info( "$authcode: " . $field->as_formatted() . "\n" );
+            $self->logger->info( "$authcode: " . $field->as_formatted() . "\n" );
             AddAuthority($record, 0, $authcode) if $self->doit;
     	}
         return 1;
@@ -114,7 +138,7 @@ Koha::Contrib::Tamil::Authority::LoadFileTask - Task loading authorities into a 
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =head1 AUTHOR
 
@@ -122,7 +146,7 @@ Frédéric Demians <f.demians@tamil.fr>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Fréderic Démians.
+This software is Copyright (c) 2012 by Fréderic Démians.
 
 This is free software, licensed under:
 
