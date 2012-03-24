@@ -9,10 +9,13 @@ bin/koha-auth
 bin/koha-cloud
 bin/koha-index
 bin/koha-index-daemon
+bin/koha-rebuild-editors
 bin/koha-sitemap
 dist.ini
 lib/Koha/Contrib/Tamil.pm
 lib/Koha/Contrib/Tamil/AuthoritiesLoader.pm
+lib/Koha/Contrib/Tamil/Authority/EditorsBuilder.pm
+lib/Koha/Contrib/Tamil/Authority/EditorsUpdater.pm
 lib/Koha/Contrib/Tamil/Authority/FromBiblioTask.pm
 lib/Koha/Contrib/Tamil/Authority/LinkBiblioTask.pm
 lib/Koha/Contrib/Tamil/Authority/LoadFileTask.pm

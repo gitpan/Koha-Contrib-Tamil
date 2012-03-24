@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.016';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.017';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -87,7 +87,8 @@ sub run {
 
     # STEP 1: All biblio records are exported in a directory
 
-    mkdir $self->directory;
+    mkdir $self->directory
+        or die "Unable to create directory: " . $self->directory;
     my $from_dir = $self->directory . "/" . $self->source;
     mkdir $from_dir;
     for my $dir ( ( "$from_dir/update", "$from_dir/delete") ) {
@@ -183,7 +184,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.016
+version 0.017
 
 =head1 METHODS
 

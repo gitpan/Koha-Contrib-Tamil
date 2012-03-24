@@ -19,6 +19,7 @@ requires:
   AnyEvent: 0
   AnyEvent::Processor: 0
   AnyEvent::Processor::Conversion: 0
+  Business::ISBN: 0
   Carp: 0
   DBI: 0
   DateTime: 0
@@ -52,4 +53,4 @@ requires:
   warnings: 0
 resources:
   repository: http://git.tamil.fr/git/Koha-Contrib-Tamil
-version: 0.016
+version: 0.017

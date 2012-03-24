@@ -27,7 +27,8 @@ my %WriteMakefileArgs = (
     "bin/koha-index",
     "bin/koha-cloud",
     "bin/koha-sitemap",
-    "bin/koha-auth"
+    "bin/koha-auth",
+    "bin/koha-rebuild-editors"
   ],
   "LICENSE" => "gpl",
   "NAME" => "Koha::Contrib::Tamil",
@@ -35,6 +36,7 @@ my %WriteMakefileArgs = (
     "AnyEvent" => 0,
     "AnyEvent::Processor" => 0,
     "AnyEvent::Processor::Conversion" => 0,
+    "Business::ISBN" => 0,
     "Carp" => 0,
     "DBI" => 0,
     "DateTime" => 0,
@@ -66,7 +68,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.016",
+  "VERSION" => "0.017",
   "test" => {
     "TESTS" => "t/*.t"
   }
