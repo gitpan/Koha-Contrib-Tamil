@@ -47,10 +47,11 @@ requires:
   YAML::Syck: 0
   ZOOM: 0
   diagnostics: 0
+  feature: 0
   perl: 5.010
   strict: 0
   utf8: 0
   warnings: 0
 resources:
   repository: http://git.tamil.fr/git/Koha-Contrib-Tamil
-version: 0.017
+version: 0.018

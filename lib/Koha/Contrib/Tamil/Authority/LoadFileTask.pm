@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::LoadFileTask;
 {
-  $Koha::Contrib::Tamil::Authority::LoadFileTask::VERSION = '0.017';
+  $Koha::Contrib::Tamil::Authority::LoadFileTask::VERSION = '0.018';
 }
 # ABSTRACT: Task loading authorities into a Koha instance
 
@@ -138,7 +138,7 @@ Koha::Contrib::Tamil::Authority::LoadFileTask - Task loading authorities into a 
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 AUTHOR
 

@@ -6,6 +6,7 @@ META.yml
 Makefile.PL
 README
 bin/koha-auth
+bin/koha-claim
 bin/koha-cloud
 bin/koha-index
 bin/koha-index-daemon
@@ -20,6 +21,7 @@ lib/Koha/Contrib/Tamil/Authority/FromBiblioTask.pm
 lib/Koha/Contrib/Tamil/Authority/LinkBiblioTask.pm
 lib/Koha/Contrib/Tamil/Authority/LoadFileTask.pm
 lib/Koha/Contrib/Tamil/Authority/Task.pm
+lib/Koha/Contrib/Tamil/Claimer.pm
 lib/Koha/Contrib/Tamil/Indexer.pm
 lib/Koha/Contrib/Tamil/IndexerDaemon.pm
 lib/Koha/Contrib/Tamil/Koha.pm

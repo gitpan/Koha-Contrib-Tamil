@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [
     "bin/koha-index-daemon",
     "bin/koha-index",
+    "bin/koha-claim",
     "bin/koha-cloud",
     "bin/koha-sitemap",
     "bin/koha-auth",
@@ -64,11 +65,12 @@ my %WriteMakefileArgs = (
     "YAML::Syck" => 0,
     "ZOOM" => 0,
     "diagnostics" => 0,
+    "feature" => 0,
     "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.017",
+  "VERSION" => "0.018",
   "test" => {
     "TESTS" => "t/*.t"
   }

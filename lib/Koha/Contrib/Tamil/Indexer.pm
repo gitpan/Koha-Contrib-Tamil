@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.017';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.018';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -184,7 +184,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 METHODS
 
