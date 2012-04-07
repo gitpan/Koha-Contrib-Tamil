@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.019';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.020';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -98,6 +98,11 @@ sub run {
         mkdir $dir;
     }
 
+    # DOM indexing? otherwise GRS-1
+    my $is_dom = $self->source eq 'biblio' ? 'zebra_bib_index_mode' : 'zebra_auth_index_mode';
+    $is_dom = $self->koha->conf->{config}->{$is_dom} || '';
+    $is_dom = $is_dom =~ /dom/i ? 1 : 0;
+
     # STEP 1.1: Records to update
     print __"Exporting records to update", "\n" if $self->verbose;
     my $exporter = AnyEvent::Processor::Conversion->new(
@@ -108,7 +113,8 @@ sub run {
             xml    => '1'
         ),
         writer => Koha::Contrib::Tamil::RecordWriter::File::Marcxml->new(
-            fh => IO::File->new( "$from_dir/update/records", '>:utf8' ) ),
+            fh => IO::File->new( "$from_dir/update/records", '>:utf8' ),
+            valid => $is_dom ),
         blocking    => $self->blocking,
         verbose     => $self->verbose,
     );
@@ -125,7 +131,8 @@ sub run {
                 xml    => '1'
             ),
             writer => Koha::Contrib::Tamil::RecordWriter::File::Marcxml->new(
-                fh => IO::File->new( "$from_dir/delete/records", '>:utf8' ) ),
+                fh => IO::File->new( "$from_dir/delete/records", '>:utf8' ),
+                valid => $is_dom ),
             blocking    => $self->blocking,
             verbose     => $self->verbose,
         );
@@ -161,12 +168,6 @@ sub run {
         my $cmd = "$cmd_base commit";
         print "$cmd\n" if $self->verbose;
         system( $cmd );
-
-        # Update zebraqueue
-        my $sql = "UPDATE zebraqueue SET done=1 WHERE server = ?";
-        my $sth = $self->koha->dbh->prepare( $sql );
-        $sth->execute( 
-            $self->source =~ /biblio/ ? 'biblioserver' : 'authorityserver' );
     }
 }
 
@@ -186,7 +187,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 METHODS
 

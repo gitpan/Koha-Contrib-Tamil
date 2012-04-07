@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter::File::Marcxml;
 {
-  $Koha::Contrib::Tamil::RecordWriter::File::Marcxml::VERSION = '0.019';
+  $Koha::Contrib::Tamil::RecordWriter::File::Marcxml::VERSION = '0.020';
 }
 # ABSTRACT: XML MARC record reader
 use Moose;
@@ -14,7 +14,7 @@ use MARC::Record;
 use MARC::File::XML;
 
 
-# Is XML Stream a valid marxml
+# Is XML Stream a valid marcxml
 # By default no => no <collection> </collection>
 has valid => (
     is => 'rw',
@@ -23,21 +23,22 @@ has valid => (
 );
 
 
-sub BUILD {
+sub begin {
     my $self = shift;
     if ( $self->valid ) {
         my $fh = $self->fh;
-        print $fh '<collection>', "\n";
+        print $fh '<?xml version="1.0" encoding="UTF-8"?>', "\n", '<collection>', "\n";
     }
 }
 
 
-sub DEMOLISH {
+sub end {
     my $self = shift;
+    my $fh = $self->fh;
     if ( $self->valid ) {
-        my $fh = $self->fh;
         print $fh '</collection>', "\n";
     }
+    $fh->flush();
 }
 
 
@@ -72,7 +73,7 @@ Koha::Contrib::Tamil::RecordWriter::File::Marcxml - XML MARC record reader
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 AUTHOR
 

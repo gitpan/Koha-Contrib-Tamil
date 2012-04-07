@@ -2,11 +2,11 @@
 
 package main;
 {
-  $main::VERSION = '0.019';
+  $main::VERSION = '0.020';
 }
 
-# PODNAME: koha-index
-# ABSTRACT: Index Koha biblio/authority records
+# PODNAME: koha-claim
+# ABSTRACT: Claim overdues each day, grouping same overdues
 
 
 use strict;
@@ -47,11 +47,11 @@ sub usage {
 
 =head1 NAME
 
-koha-index - Index Koha biblio/authority records
+koha-claim - Claim overdues each day, grouping same overdues
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 SYNOPSIS
 

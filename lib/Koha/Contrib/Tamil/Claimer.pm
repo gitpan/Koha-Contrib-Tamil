@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Claimer;
 {
-  $Koha::Contrib::Tamil::Claimer::VERSION = '0.019';
+  $Koha::Contrib::Tamil::Claimer::VERSION = '0.020';
 }
 # ABSTRACT: Claim overdues
 use Moose;
@@ -39,10 +39,11 @@ sub BUILD {
             say "Bad rule: $_";
             next;
         }
+        my $branchcode = $branch eq '*' ? '' : $branch;
         $rule->{"$branch-$itype-$day"} = {
             action => $action,
             notice => $notice,
-            letter => C4::Letters::getletter('circulation', $notice),
+            letter => C4::Letters::getletter('circulation', $notice, $branchcode),
         };
     }
     unless ( keys %$rule ) {
@@ -226,7 +227,7 @@ Koha::Contrib::Tamil::Claimer - Claim overdues
 
 =head1 VERSION
 
-version 0.019
+version 0.020
 
 =head1 AUTHOR
 
