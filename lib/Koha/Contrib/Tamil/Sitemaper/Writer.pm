@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Sitemaper::Writer;
 {
-  $Koha::Contrib::Tamil::Sitemaper::Writer::VERSION = '0.021';
+  $Koha::Contrib::Tamil::Sitemaper::Writer::VERSION = '0.022';
 }
 #ABSTRACT: Koha sitemaper writer
 
@@ -106,7 +106,7 @@ Koha::Contrib::Tamil::Sitemaper::Writer - Koha sitemaper writer
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 AUTHOR
 

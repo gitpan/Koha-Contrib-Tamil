@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::AuthoritiesLoader;
 {
-  $Koha::Contrib::Tamil::AuthoritiesLoader::VERSION = '0.021';
+  $Koha::Contrib::Tamil::AuthoritiesLoader::VERSION = '0.022';
 }
 #ABSTRACT: Authorities loader into a Koha instance
 
@@ -108,7 +108,7 @@ Koha::Contrib::Tamil::AuthoritiesLoader - Authorities loader into a Koha instanc
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 AUTHOR
 

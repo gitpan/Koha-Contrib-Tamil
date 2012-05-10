@@ -12,7 +12,8 @@ plan skip_all => 'Test irrelevant without Koha library being available' if $@;
 my @modules;
 find(
   sub {
-    return if $File::Find::name !~ /\.pm\z/;
+    return if $File::Find::name !~ /\.pm\z/ ||
+              $File::Find::name =~ /Claimer\.pm/;
     my $found = $File::Find::name;
     $found =~ s{^lib/}{};
     $found =~ s{[/\\]}{::}g;
@@ -30,6 +31,7 @@ sub _find_scripts {
     find(
       sub {
         return unless -f;
+        return if /koha-claim/;
         my $found = $File::Find::name;
         # nothing to skip
         open my $FH, '<', $_ or do {
