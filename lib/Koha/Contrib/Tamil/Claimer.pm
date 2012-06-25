@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Claimer;
 {
-  $Koha::Contrib::Tamil::Claimer::VERSION = '0.022';
+  $Koha::Contrib::Tamil::Claimer::VERSION = '0.023';
 }
 # ABSTRACT: Claim overdues
 use Moose;
@@ -69,6 +69,9 @@ sub substitute_placeholder {
             my $short_name = $1;
             if ( exists $record->{$short_name} ) {
                 my $value = $record->{$short_name} || '';
+                $value = substr($value, 0, 10)
+                    if $short_name eq 'date_due' &&
+                       $value =~ /23:59:00/;
                 $content =~ s/<<$name>>/$value/;
                 next;
             }
@@ -227,7 +230,7 @@ Koha::Contrib::Tamil::Claimer - Claim overdues
 
 =head1 VERSION
 
-version 0.022
+version 0.023
 
 =head1 AUTHOR
 

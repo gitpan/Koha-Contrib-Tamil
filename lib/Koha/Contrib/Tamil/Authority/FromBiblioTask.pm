@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::FromBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::FromBiblioTask::VERSION = '0.022';
+  $Koha::Contrib::Tamil::Authority::FromBiblioTask::VERSION = '0.023';
 }
 # ABSTRACT: Task extracting authorities from biblio records
 
@@ -66,6 +66,7 @@ sub process {
                     my $concat = '';
                     foreach my $subfield ( $field->subfields() ) {
                         my ($letter, $value) = @$subfield;
+                        next if $letter !~ /[a-zA-Z0-9]/;
                         #chop $value;
                         $value =~ s/^\s+//;
                         $value =~ s/\s+$//;
@@ -124,7 +125,7 @@ Koha::Contrib::Tamil::Authority::FromBiblioTask - Task extracting authorities fr
 
 =head1 VERSION
 
-version 0.022
+version 0.023
 
 =head1 AUTHOR
 
