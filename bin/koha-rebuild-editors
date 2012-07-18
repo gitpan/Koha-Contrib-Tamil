@@ -69,7 +69,7 @@ koha-rebuild-editors - Populates EDITORS authorities based on biblio records
 
 =head1 VERSION
 
-version 0.023
+version 0.024
 
 =head1 DESCRIPTION
 

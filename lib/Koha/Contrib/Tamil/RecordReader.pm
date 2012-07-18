@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.023';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.024';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -218,7 +218,14 @@ sub get_auth_xml {
     # If authority isn't found we build a mimimalist record
     # Usefull for delete Zebra requests
     unless ( $xml ) {
-        return "<record><controlfield tag=\"001\">$id</controlfield></record>\n";
+        return
+            "<record 
+               xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+               xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
+               xmlns=\"http://www.loc.gov/MARC21/slim\">
+             <leader>                        </leader>
+             <controlfield tag=\"001\">$id</controlfield>
+             </record>\n";
     }
 
     my $new_xml = '';
@@ -246,7 +253,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.023
+version 0.024
 
 =head1 SYNOPSYS
 
