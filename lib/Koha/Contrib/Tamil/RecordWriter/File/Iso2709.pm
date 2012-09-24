@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter::File::Iso2709;
 {
-  $Koha::Contrib::Tamil::RecordWriter::File::Iso2709::VERSION = '0.024';
+  $Koha::Contrib::Tamil::RecordWriter::File::Iso2709::VERSION = '0.025';
 }
 #ABSTRACT: ISO2709 MARC records writer
 use Moose;
@@ -44,7 +44,7 @@ Koha::Contrib::Tamil::RecordWriter::File::Iso2709 - ISO2709 MARC records writer
 
 =head1 VERSION
 
-version 0.024
+version 0.025
 
 =head1 AUTHOR
 

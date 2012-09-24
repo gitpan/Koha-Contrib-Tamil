@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.024';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.025';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -55,6 +55,8 @@ has directory => (
     isa     => 'Str',
     default => './koha-index',
 );
+
+has keep => ( is => 'rw', isa => 'Bool', default => 0 );
 
 has verbose => ( is => 'rw', isa => 'Bool', default => 0 );
 
@@ -169,6 +171,8 @@ sub run {
         print "$cmd\n" if $self->verbose;
         system( $cmd );
     }
+
+    rmtree( $self->directory ) unless $self->keep;
 }
 
 
@@ -187,7 +191,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.024
+version 0.025
 
 =head1 METHODS
 

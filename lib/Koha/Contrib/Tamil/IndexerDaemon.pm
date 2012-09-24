@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::IndexerDaemon;
 {
-  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.024';
+  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.025';
 }
 # ABSTRACT: Class implementing a Koha records indexer daemon
 
@@ -88,6 +88,7 @@ sub index_zebraqueue {
             source      => $source,
             select      => 'queue',
             blocking    => 1,
+            keep        => 1,
             verbose     => $self->verbose,
         );
         $indexer->directory($self->directory) if $self->directory;
@@ -111,7 +112,7 @@ Koha::Contrib::Tamil::IndexerDaemon - Class implementing a Koha records indexer 
 
 =head1 VERSION
 
-version 0.024
+version 0.025
 
 =head1 SYNOPSIS
 
