@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::EditorsBuilder;
 {
-  $Koha::Contrib::Tamil::Authority::EditorsBuilder::VERSION = '0.025';
+  $Koha::Contrib::Tamil::Authority::EditorsBuilder::VERSION = '0.026';
 }
 use Moose;
 
@@ -154,7 +154,7 @@ Koha::Contrib::Tamil::Authority::EditorsBuilder
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 AUTHOR
 

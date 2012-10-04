@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::FromBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::FromBiblioTask::VERSION = '0.025';
+  $Koha::Contrib::Tamil::Authority::FromBiblioTask::VERSION = '0.026';
 }
 # ABSTRACT: Task extracting authorities from biblio records
 
@@ -125,7 +125,7 @@ Koha::Contrib::Tamil::Authority::FromBiblioTask - Task extracting authorities fr
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 AUTHOR
 

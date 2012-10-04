@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Koha;
 {
-  $Koha::Contrib::Tamil::Koha::VERSION = '0.025';
+  $Koha::Contrib::Tamil::Koha::VERSION = '0.026';
 }
 #ABSTRACT: Class exposing info about a Koha instance.
 
@@ -53,6 +53,7 @@ sub BUILD {
         # Force utf8 communication between MySQL and koha
         $self->dbh->{ mysql_enable_utf8 } = 1;
         $self->dbh->do( "set NAMES 'utf8'" );
+        $self->dbh->{ mysql_auto_reconnect } = 1;
         my $tz = $ENV{TZ};
         ($tz) and $self->dbh->do( qq(SET time_zone = "$tz") );
     }
@@ -168,7 +169,7 @@ Koha::Contrib::Tamil::Koha - Class exposing info about a Koha instance.
 
 =head1 VERSION
 
-version 0.025
+version 0.026
 
 =head1 ATTRIBUTES
 
