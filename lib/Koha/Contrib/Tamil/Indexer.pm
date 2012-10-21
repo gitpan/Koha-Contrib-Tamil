@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Indexer;
 {
-  $Koha::Contrib::Tamil::Indexer::VERSION = '0.026';
+  $Koha::Contrib::Tamil::Indexer::VERSION = '0.027';
 }
 # ABSTRACT: Class doing Zebra Koha indexing
 
@@ -115,7 +115,7 @@ sub run {
             xml    => '1'
         ),
         writer => Koha::Contrib::Tamil::RecordWriter::File::Marcxml->new(
-            fh => IO::File->new( "$from_dir/update/records", '>:utf8' ),
+            fh => IO::File->new( "$from_dir/update/records", '>:encoding(utf8)' ),
             valid => $is_dom ),
         blocking    => $self->blocking,
         verbose     => $self->verbose,
@@ -191,7 +191,7 @@ Koha::Contrib::Tamil::Indexer - Class doing Zebra Koha indexing
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 METHODS
 

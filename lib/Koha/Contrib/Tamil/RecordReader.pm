@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.026';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.027';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -9,8 +9,9 @@ use Moose;
 with 'MooseX::RW::Reader';
 
 
+use Modern::Perl;
+use utf8;
 use Moose::Util::TypeConstraints;
-
 use MARC::Record;
 use MARC::File::XML;
 use C4::Context;
@@ -57,6 +58,9 @@ has id => ( is => 'rw' );
 # Items extraction required
 has itemsextraction => ( is => 'rw', isa => 'Bool', default => 0 );
 
+# Biblio records normalizer, if necessary
+has normalizer => ( is => 'rw' );
+
 # Read all records? (or queued records)
 has allrecords => ( is => 'rw', isa => 'Bool', default => 1 );
 
@@ -83,6 +87,16 @@ sub BUILD {
     my $version = C4::Context::KOHAVERSION();
     $self->itemsextraction( $version ge '3.04' );
 
+    if ( $version ge '3.09' && $self->source =~ /biblio/i &&
+         C4::Context->preference('IncludeSeeFromInSearches') )
+    {
+        require Koha::RecordProcessor;
+        my $normalizer = Koha::RecordProcessor->new( { filters => 'EmbedSeeFromHeadings' } );
+        $self->normalizer($normalizer);
+        # Necessary for as_xml method
+        MARC::File::XML->default_record_format( C4::Context->preference('marcflavour') );
+    }
+
     my $operation = $self->select =~ /update/i
                     ? 'specialUpdate'
                     : 'recordDelete';
@@ -107,10 +121,10 @@ sub BUILD {
         $self->sth_queue_done( $self->koha->dbh->prepare(
             "UPDATE zebraqueue SET done=1 WHERE id=?" ) );
     }
-
+    
     __PACKAGE__->meta->add_method( 'get' =>
         $self->source =~ /biblio/i
-            ? $self->xml
+            ? $self->xml && !$self->normalizer
               ? \&get_biblio_xml
               : \&get_biblio_marc
             : $self->xml
@@ -127,6 +141,7 @@ sub read {
         # Suppress entry in zebraqueue table
         $self->sth_queue_done->execute($queue_id) if $queue_id;
         if ( my $record = $self->get( $id ) ) {
+            $record = $self->normalizer->process($record) if $self->normalizer;
             $self->count($self->count+1);
             $self->id( $id );
             return $record;
@@ -196,7 +211,6 @@ sub get_biblio_marc {
     }
 
     $marcxml =~ s/[^\x09\x0A\x0D\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}\x{10000}-\x{10FFFF}]//g;
-    #MARC::File::XML->default_record_format( C4::Context->preference('marcflavour') );
     my $record = MARC::Record->new();
     if ($marcxml) {
         $record = eval { 
@@ -253,7 +267,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 SYNOPSYS
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Koha;
 {
-  $Koha::Contrib::Tamil::Koha::VERSION = '0.026';
+  $Koha::Contrib::Tamil::Koha::VERSION = '0.027';
 }
 #ABSTRACT: Class exposing info about a Koha instance.
 
@@ -88,7 +88,9 @@ sub zconn {
     #print "zconn: nouvelle connexion\n";
     my $c        = $self->conf;
     my $name     = $server eq 'biblio' ? 'biblioserver' : 'authorityserver';
-    my $syntax   = "usmarc";
+    my $syntax   = $c->{server}->{$name}->{retrievalinfo}->{retrieval};
+    $syntax = [ grep { $_->{name} && $_->{name} eq 'F' && $_->{syntax} ne 'xml' } @$syntax ];
+    $syntax = $syntax->[0]->{syntax};
     my $host     = $c->{listen}->{$name}->{content};
     my $user     = $c->{serverinfo}->{$name}->{user};
     my $password = $c->{serverinfo}->{$name}->{password};
@@ -169,7 +171,7 @@ Koha::Contrib::Tamil::Koha - Class exposing info about a Koha instance.
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 ATTRIBUTES
 

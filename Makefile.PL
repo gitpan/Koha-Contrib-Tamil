@@ -47,11 +47,13 @@ my %WriteMakefileArgs = (
     "Getopt::Long" => 0,
     "IO::File" => 0,
     "Koha::Contrib::Tamil::RecordWriter::File" => 0,
+    "Koha::RecordProcessor" => 0,
     "List::Util" => 0,
     "Locale::TextDomain" => 0,
     "MARC::Batch" => 0,
     "MARC::File::XML" => 0,
     "MARC::Record" => 0,
+    "Modern::Perl" => 0,
     "Moose" => 0,
     "Moose::Util::TypeConstraints" => 0,
     "MooseX::Getopt" => 0,
@@ -70,7 +72,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.026",
+  "VERSION" => "0.027",
   "test" => {
     "TESTS" => "t/*.t"
   }

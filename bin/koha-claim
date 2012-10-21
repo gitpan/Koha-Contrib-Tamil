@@ -2,7 +2,7 @@
 
 package main;
 {
-  $main::VERSION = '0.026';
+  $main::VERSION = '0.027';
 }
 
 # PODNAME: koha-claim
@@ -51,7 +51,7 @@ koha-claim - Claim overdues each day, grouping same overdues
 
 =head1 VERSION
 
-version 0.026
+version 0.027
 
 =head1 SYNOPSIS
 
