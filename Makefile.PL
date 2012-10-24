@@ -47,7 +47,6 @@ my %WriteMakefileArgs = (
     "Getopt::Long" => 0,
     "IO::File" => 0,
     "Koha::Contrib::Tamil::RecordWriter::File" => 0,
-    "Koha::RecordProcessor" => 0,
     "List::Util" => 0,
     "Locale::TextDomain" => 0,
     "MARC::Batch" => 0,
@@ -72,7 +71,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.027",
+  "VERSION" => "0.028",
   "test" => {
     "TESTS" => "t/*.t"
   }

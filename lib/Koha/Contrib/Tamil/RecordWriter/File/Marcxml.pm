@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordWriter::File::Marcxml;
 {
-  $Koha::Contrib::Tamil::RecordWriter::File::Marcxml::VERSION = '0.027';
+  $Koha::Contrib::Tamil::RecordWriter::File::Marcxml::VERSION = '0.028';
 }
 # ABSTRACT: XML MARC record reader
 use Moose;
@@ -73,7 +73,7 @@ Koha::Contrib::Tamil::RecordWriter::File::Marcxml - XML MARC record reader
 
 =head1 VERSION
 
-version 0.027
+version 0.028
 
 =head1 AUTHOR
 

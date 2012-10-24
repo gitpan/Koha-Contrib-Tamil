@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Claimer;
 {
-  $Koha::Contrib::Tamil::Claimer::VERSION = '0.027';
+  $Koha::Contrib::Tamil::Claimer::VERSION = '0.028';
 }
 # ABSTRACT: Claim overdues
 use Moose;
@@ -230,7 +230,7 @@ Koha::Contrib::Tamil::Claimer - Claim overdues
 
 =head1 VERSION
 
-version 0.027
+version 0.028
 
 =head1 AUTHOR
 
