@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Sitemaper;
 {
-  $Koha::Contrib::Tamil::Sitemaper::VERSION = '0.028';
+  $Koha::Contrib::Tamil::Sitemaper::VERSION = '0.029';
 }
 # ABSTRACT: Class building Sitemap files for a Koha DB
 
@@ -74,8 +74,6 @@ override 'end_message' => sub {
 no Moose;
 __PACKAGE__->meta->make_immutable;
 
-
-
 =pod
 
 =encoding UTF-8
@@ -86,7 +84,7 @@ Koha::Contrib::Tamil::Sitemaper - Class building Sitemap files for a Koha DB
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =HEAD1 SYNOPSIS
 
@@ -108,7 +106,6 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-
 
 __END__
 

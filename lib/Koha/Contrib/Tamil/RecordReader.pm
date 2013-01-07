@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.028';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.029';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -254,9 +254,8 @@ sub get_auth_xml {
 no Moose;
 1;
 
-   
-
 __END__
+
 =pod
 
 =encoding UTF-8
@@ -267,7 +266,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 SYNOPSYS
 
@@ -303,4 +302,3 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-

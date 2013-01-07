@@ -1,9 +1,15 @@
+--
+Bibliothèque
+Bénédicte
 Changes
+Frédéric
 LICENSE
 MANIFEST
 MANIFEST.SKIP
 META.yml
 Makefile.PL
+Non,
+Normalement
 README
 bin/koha-auth
 bin/koha-claim

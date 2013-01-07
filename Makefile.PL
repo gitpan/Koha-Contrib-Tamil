@@ -23,12 +23,12 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Koha-Contrib-Tamil",
   "EXE_FILES" => [
-    "bin/koha-index-daemon",
-    "bin/koha-index",
     "bin/koha-claim",
     "bin/koha-cloud",
-    "bin/koha-sitemap",
     "bin/koha-auth",
+    "bin/koha-index",
+    "bin/koha-sitemap",
+    "bin/koha-index-daemon",
     "bin/koha-rebuild-editors"
   ],
   "LICENSE" => "gpl",
@@ -71,7 +71,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.028",
+  "VERSION" => "0.029",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -96,8 +96,10 @@ delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
 
 WriteMakefile(%WriteMakefileArgs);
 
+{
 package
 MY;
 use File::ShareDir::Install qw(postamble);
+}
 
 

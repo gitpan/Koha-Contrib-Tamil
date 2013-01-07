@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.028';
+  $Main::VERSION = '0.029';
 }
 
 # PODNAME: koha-sitemap
@@ -41,9 +41,8 @@ my $sitemaper = Koha::Contrib::Tamil::Sitemaper->new(
 );
 $sitemaper->run(); 
 
-
-
 __END__
+
 =pod
 
 =encoding UTF-8
@@ -54,7 +53,7 @@ koha-sitemap - Creates sitemap files for a whole Koha DB
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 DESCRIPTION
 
@@ -113,4 +112,3 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-

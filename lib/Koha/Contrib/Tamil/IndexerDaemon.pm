@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::IndexerDaemon;
 {
-  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.028';
+  $Koha::Contrib::Tamil::IndexerDaemon::VERSION = '0.029';
 }
 # ABSTRACT: Class implementing a Koha records indexer daemon
 
@@ -100,7 +100,7 @@ no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
 
-
+__END__
 
 =pod
 
@@ -112,7 +112,7 @@ Koha::Contrib::Tamil::IndexerDaemon - Class implementing a Koha records indexer 
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 SYNOPSIS
 
@@ -162,7 +162,3 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-
-
-__END__
-

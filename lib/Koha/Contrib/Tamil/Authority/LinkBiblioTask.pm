@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Authority::LinkBiblioTask;
 {
-  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.028';
+  $Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.029';
 }
 # ABSTRACT: Task linking biblio records to authorities
 use Moose;
@@ -145,6 +145,7 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
 =encoding UTF-8
@@ -155,7 +156,7 @@ Koha::Contrib::Tamil::Authority::LinkBiblioTask - Task linking biblio records to
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 METHODS
 
@@ -181,4 +182,3 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-

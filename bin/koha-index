@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.028';
+  $Main::VERSION = '0.029';
 }
 # PODNAME: koha-index
 # ABSTRACT: Index Koha biblio/authority records
@@ -21,8 +21,7 @@ if ( $indexer->help ) {
 }
 $indexer->run();
 
-
-
+__END__
 
 =pod
 
@@ -34,7 +33,7 @@ koha-index - Index Koha biblio/authority records
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 SYNOPSIS
 
@@ -116,8 +115,3 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-
-
-__END__
-
-

@@ -2,7 +2,7 @@
 
 package main;
 {
-  $main::VERSION = '0.028';
+  $main::VERSION = '0.029';
 }
 
 # PODNAME: koha-claim
@@ -38,8 +38,7 @@ sub usage {
     pod2usage( -verbose => 2 );
 } 
 
-
-
+__END__
 
 =pod
 
@@ -51,7 +50,7 @@ koha-claim - Claim overdues each day, grouping same overdues
 
 =head1 VERSION
 
-version 0.028
+version 0.029
 
 =head1 SYNOPSIS
 
@@ -122,7 +121,3 @@ This is free software, licensed under:
   The GNU General Public License, Version 3, June 2007
 
 =cut
-
-
-__END__
-
