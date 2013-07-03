@@ -2,18 +2,16 @@
 Bibliothèque
 Bénédicte
 Changes
-Frédéric
 LICENSE
 MANIFEST
 MANIFEST.SKIP
 META.yml
 Makefile.PL
-Non,
-Normalement
 README
 bin/koha-auth
 bin/koha-claim
 bin/koha-cloud
+bin/koha-dump-biblio
 bin/koha-index
 bin/koha-index-daemon
 bin/koha-rebuild-editors
@@ -27,6 +25,7 @@ lib/Koha/Contrib/Tamil/Authority/FromBiblioTask.pm
 lib/Koha/Contrib/Tamil/Authority/LinkBiblioTask.pm
 lib/Koha/Contrib/Tamil/Authority/LoadFileTask.pm
 lib/Koha/Contrib/Tamil/Authority/Task.pm
+lib/Koha/Contrib/Tamil/Biblio/Dumper.pm
 lib/Koha/Contrib/Tamil/Claimer.pm
 lib/Koha/Contrib/Tamil/Indexer.pm
 lib/Koha/Contrib/Tamil/IndexerDaemon.pm

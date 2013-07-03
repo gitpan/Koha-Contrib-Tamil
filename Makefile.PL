@@ -28,6 +28,7 @@ my %WriteMakefileArgs = (
     "bin/koha-auth",
     "bin/koha-index",
     "bin/koha-sitemap",
+    "bin/koha-dump-biblio",
     "bin/koha-index-daemon",
     "bin/koha-rebuild-editors"
   ],
@@ -51,6 +52,9 @@ my %WriteMakefileArgs = (
     "Locale::TextDomain" => 0,
     "MARC::Batch" => 0,
     "MARC::File::XML" => 0,
+    "MARC::Moose::Formater::Iso2709" => 0,
+    "MARC::Moose::Record" => 0,
+    "MARC::Moose::Writer" => 0,
     "MARC::Record" => 0,
     "Modern::Perl" => 0,
     "Moose" => 0,
@@ -71,7 +75,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.029",
+  "VERSION" => "0.030",
   "test" => {
     "TESTS" => "t/*.t"
   }
