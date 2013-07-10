@@ -2,7 +2,7 @@ NAME
     Koha::Contrib::Tamil - Various scripts to manage Koha instances
 
 VERSION
-    version 0.030
+    version 0.031
 
 DESCRIPTION
     This module contains <Tamil> <Koha Open Source ILS> contribution

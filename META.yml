@@ -58,4 +58,4 @@ requires:
   warnings: 0
 resources:
   repository: http://git.tamil.fr/git/Koha-Contrib-Tamil
-version: 0.030
+version: 0.031

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Biblio::Dumper;
 {
-  $Koha::Contrib::Tamil::Biblio::Dumper::VERSION = '0.030';
+  $Koha::Contrib::Tamil::Biblio::Dumper::VERSION = '0.031';
 }
 # ABSTRACT: Class dumping a Koha Catalog
 
@@ -9,8 +9,8 @@ use Moose;
 extends 'AnyEvent::Processor';
 
 use Modern::Perl;
+use utf8;
 use Koha::Contrib::Tamil::Koha;
-use Koha::Contrib::Tamil::Sitemaper::Writer;
 use MARC::Moose::Record;
 use MARC::Moose::Writer;
 use MARC::Moose::Formater::Iso2709;
@@ -18,12 +18,23 @@ use C4::Biblio;
 use C4::Items;
 use Locale::TextDomain 'Koha-Contrib-Tamil';
 
+
 has file => ( is => 'rw', isa => 'Str', default => 'dump.mrc' );
 
 has branches => (
     is => 'rw',
     isa => 'ArrayRef',
-    default => sub { {} }
+    default => sub { [] }
+);
+
+# Optional query to select biblio records to dump
+has query => ( is => 'rw', isa => 'Str', default => '' );
+
+has convert => (
+    is => 'rw',
+    default => sub { sub {
+        return shift;
+    } },
 );
 
 has formater => (
@@ -52,29 +63,30 @@ before 'run' => sub {
     my $self = shift;
 
     $self->koha( Koha::Contrib::Tamil::Koha->new() ) unless $self->koha;
-    #$self->writer(
-    #    Koha::Contrib::Tamil::Sitemaper::Writer->new( url => $self->url ) );
 
-    my $where = '';
+    my $query = $self->query;
+    my $where = "";
     if ( my $branches = $self->branches ) {
-        $where = ' WHERE homebranch IN (' .
-                join(',', map {"'$_'" } @$branches) . ')'
+        $where = 'homebranch IN (' .
+                 join(',', map {"'$_'" } @$branches) . ')'
             if @$branches;
     }
-    my $sql = "SELECT DISTINCT biblionumber FROM items" . $where;
-    my $sth = $self->koha->dbh->prepare($sql);
+    unless ($query) {
+        $query = "SELECT DISTINCT biblionumber FROM items";
+        $query = "$query WHERE $where" if $where;
+    }
+    #say $query;
+    my $sth = $self->koha->dbh->prepare($query);
     $sth->execute();
-    $self->sth( $sth );
+    $self->sth($sth);
 
     $self->sth_marcxml( $self->koha->dbh->prepare(
         "SELECT marcxml FROM biblioitems WHERE biblionumber=?" ) );
 
-    $where = $where
-             ? $where . " AND biblionumber=?"
-             : " WHERE biblionumber=?";
-    $self->sth_item( $self->koha->dbh->prepare(
-        "SELECT * FROM items" . $where ) );
-
+    $query = "SELECT * FROM items WHERE biblionumber=?";
+    $query .= " AND $where" if $where;
+    #say $query;
+    $self->sth_item( $self->koha->dbh->prepare($query));
 
     my $fh = new IO::File '> ' . $self->file;
     binmode($fh, ':encoding(utf8)');
@@ -97,10 +109,12 @@ override 'process' => sub {
     my ($biblionumber) = $self->sth->fetchrow;
     return unless $biblionumber;
 
+    # Get the biblio record
     $self->sth_marcxml->execute($biblionumber);
     my ($marcxml) = $self->sth_marcxml->fetchrow;
     my $record = MARC::Moose::Record::new_from($marcxml, 'marcxml');
 
+    # Construct item fields
     $self->sth_item->execute($biblionumber);
     while ( my $item = $self->sth_item->fetchrow_hashref ) {
         my $imarc = Item2Marc($item, $biblionumber);
@@ -110,7 +124,9 @@ override 'process' => sub {
             subf => [ $field->subfields ]);
         $record->append($f);
     }
-    #say $record->as('Text');
+
+    # Specific conversion
+    $record = $self->convert->($record);
 
     $self->writer->write($record);
     return super();
@@ -155,14 +171,9 @@ Koha::Contrib::Tamil::Biblio::Dumper - Class dumping a Koha Catalog
 
 =head1 VERSION
 
-version 0.030
+version 0.031
 
 =HEAD1 SYNOPSIS
-
- my $task = Koha::Contrib::Tamil->new( 
-    url => 'http://opac.mylibrary.org',
-    verbose => 1 );
- $task->run();
 
 =head1 AUTHOR
 
@@ -179,6 +190,7 @@ This is free software, licensed under:
 =cut
 
 __END__
+
 
 1;
 
