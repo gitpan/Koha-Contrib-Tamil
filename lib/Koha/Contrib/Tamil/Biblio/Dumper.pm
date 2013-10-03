@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Biblio::Dumper;
 {
-  $Koha::Contrib::Tamil::Biblio::Dumper::VERSION = '0.031';
+  $Koha::Contrib::Tamil::Biblio::Dumper::VERSION = '0.032';
 }
 # ABSTRACT: Class dumping a Koha Catalog
 
@@ -171,7 +171,7 @@ Koha::Contrib::Tamil::Biblio::Dumper - Class dumping a Koha Catalog
 
 =head1 VERSION
 
-version 0.031
+version 0.032
 
 =HEAD1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::RecordReader;
 {
-  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.031';
+  $Koha::Contrib::Tamil::RecordReader::VERSION = '0.032';
 }
 #ABSTRACT: Koha biblio/authority records reader
 
@@ -216,6 +216,22 @@ sub get_biblio_marc {
         $record = eval { 
             MARC::Record::new_from_xml( $marcxml, "utf8" ) };
         if ($@) { warn " problem with: $id : $@ \n$marcxml"; }
+
+        # Items extraction if Koha v3.4 and above
+        # FIXME: It slows down drastically biblio records export
+        if ( $self->itemsextraction ) {
+            my @items = @{ $self->koha->dbh->selectall_arrayref(
+                "SELECT * FROM items WHERE biblionumber=$id",
+                {Slice => {} } ) };
+            if (@items){
+                my @itemsrecord;
+                foreach my $item (@items) {
+                    my $record = Item2Marc($item, $id);
+                    push @itemsrecord, $record->field($self->itemtag);
+                }
+                $record->insert_fields_ordered(@itemsrecord);
+            }
+        }
         return $record;
     }
     return;
@@ -266,7 +282,7 @@ Koha::Contrib::Tamil::RecordReader - Koha biblio/authority records reader
 
 =head1 VERSION
 
-version 0.031
+version 0.032
 
 =head1 SYNOPSYS
 

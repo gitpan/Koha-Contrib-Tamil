@@ -2,7 +2,7 @@
 
 package Main;
 {
-  $Main::VERSION = '0.031';
+  $Main::VERSION = '0.032';
 }
 
 # PODNAME: koha-sitemap
@@ -53,7 +53,7 @@ koha-sitemap - Creates sitemap files for a whole Koha DB
 
 =head1 VERSION
 
-version 0.031
+version 0.032
 
 =head1 DESCRIPTION
 
