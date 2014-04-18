@@ -16,12 +16,12 @@ my %WriteMakefileArgs = (
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
-  "DISTNAME" => "Koha-Contrib-Tamil",
+  "DISTNAME" => "koha-mirabel",
   "EXE_FILES" => [
     "bin/koha-mirabel"
   ],
   "LICENSE" => "perl",
-  "NAME" => "Koha::Contrib::Tamil",
+  "NAME" => "koha::mirabel",
   "PREREQ_PM" => {
     "C4::Biblio" => 0,
     "DateTime" => 0,
