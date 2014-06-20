@@ -3,62 +3,127 @@
 use strict;
 use warnings;
 
-
+use 5.010;
 
 use ExtUtils::MakeMaker 6.30;
 
+use File::ShareDir::Install;
+install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Synchronise un catalogue Koha avec Mir\@bel",
+  "ABSTRACT" => "Various scripts to manage Koha instances",
   "AUTHOR" => "Fr\x{e9}d\x{e9}ric Demians <f.demians\@tamil.fr>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30"
+    "ExtUtils::MakeMaker" => "6.30",
+    "File::ShareDir::Install" => "0.03"
   },
   "DISTNAME" => "Koha-Contrib-Tamil",
   "EXE_FILES" => [
-    "bin/koha-mirabel"
+    "bin/koha-claim",
+    "bin/koha-rebuild-editors",
+    "bin/koha-sitemap",
+    "bin/koha-cloud",
+    "bin/koha-index-daemon",
+    "bin/koha-index",
+    "bin/koha-dump-biblio",
+    "bin/koha-auth"
   ],
-  "LICENSE" => "perl",
+  "LICENSE" => "gpl",
   "NAME" => "Koha::Contrib::Tamil",
   "PREREQ_PM" => {
-    "C4::Biblio" => 0,
-    "DateTime" => 0,
-    "FindBin" => 0,
+    "AnyEvent" => 0,
+    "AnyEvent::Processor" => 0,
+    "AnyEvent::Processor::Conversion" => 0,
+    "Business::ISBN" => 0,
+    "Carp" => 0,
+    "DBI" => 0,
+    "Fatal" => 0,
+    "File::Path" => 0,
+    "File::Temp" => 0,
     "Getopt::Long" => 0,
-    "LWP::Simple" => 0,
+    "IO::File" => 0,
+    "Koha::Contrib::Tamil::RecordWriter::File" => 0,
+    "Koha::Contrib::Tamil::Sitemaper" => 0,
     "List::Util" => 0,
-    "MARC::Moose::Field::Std" => 0,
+    "Locale::TextDomain" => 0,
+    "MARC::Batch" => 0,
+    "MARC::File::XML" => 0,
+    "MARC::Moose::Formater::Iso2709" => 0,
     "MARC::Moose::Record" => 0,
+    "MARC::Moose::Writer" => 0,
+    "MARC::Record" => 0,
     "Modern::Perl" => 0,
     "Moose" => 0,
+    "Moose::Util::TypeConstraints" => 0,
+    "MooseX::Getopt" => 0,
+    "MooseX::LogDispatch" => 0,
+    "MooseX::RW::Reader" => 0,
+    "MooseX::RW::Writer::File" => 0,
+    "Pod::Usage" => 0,
     "XML::Simple" => 0,
     "YAML" => 0,
-    "utf8" => 0
+    "YAML::Syck" => 0,
+    "ZOOM" => 0,
+    "diagnostics" => 0,
+    "feature" => 0,
+    "strict" => 0,
+    "utf8" => 0,
+    "warnings" => 0
   },
-  "TEST_REQUIRES" => {},
-  "VERSION" => "0.0.1",
+  "TEST_REQUIRES" => {
+    "File::Find" => 0,
+    "Test::More" => 0
+  },
+  "VERSION" => "0.033",
   "test" => {
-    "TESTS" => ""
+    "TESTS" => "t/*.t"
   }
 );
 
 
 my %FallbackPrereqs = (
-  "C4::Biblio" => 0,
-  "DateTime" => 0,
-  "FindBin" => 0,
+  "AnyEvent" => 0,
+  "AnyEvent::Processor" => 0,
+  "AnyEvent::Processor::Conversion" => 0,
+  "Business::ISBN" => 0,
+  "Carp" => 0,
+  "DBI" => 0,
+  "Fatal" => 0,
+  "File::Find" => 0,
+  "File::Path" => 0,
+  "File::Temp" => 0,
   "Getopt::Long" => 0,
-  "LWP::Simple" => 0,
+  "IO::File" => 0,
+  "Koha::Contrib::Tamil::RecordWriter::File" => 0,
+  "Koha::Contrib::Tamil::Sitemaper" => 0,
   "List::Util" => 0,
-  "MARC::Moose::Field::Std" => 0,
+  "Locale::TextDomain" => 0,
+  "MARC::Batch" => 0,
+  "MARC::File::XML" => 0,
+  "MARC::Moose::Formater::Iso2709" => 0,
   "MARC::Moose::Record" => 0,
+  "MARC::Moose::Writer" => 0,
+  "MARC::Record" => 0,
   "Modern::Perl" => 0,
   "Moose" => 0,
+  "Moose::Util::TypeConstraints" => 0,
+  "MooseX::Getopt" => 0,
+  "MooseX::LogDispatch" => 0,
+  "MooseX::RW::Reader" => 0,
+  "MooseX::RW::Writer::File" => 0,
+  "Pod::Usage" => 0,
+  "Test::More" => 0,
   "XML::Simple" => 0,
   "YAML" => 0,
-  "utf8" => 0
+  "YAML::Syck" => 0,
+  "ZOOM" => 0,
+  "diagnostics" => 0,
+  "feature" => 0,
+  "strict" => 0,
+  "utf8" => 0,
+  "warnings" => 0
 );
 
 
@@ -73,5 +138,10 @@ delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
 
 WriteMakefile(%WriteMakefileArgs);
 
+{
+package
+MY;
+use File::ShareDir::Install qw(postamble);
+}
 
 
