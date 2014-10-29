@@ -1,5 +1,5 @@
 package Koha::Contrib::Tamil::Authority::LinkBiblioTask;
-$Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.033';
+$Koha::Contrib::Tamil::Authority::LinkBiblioTask::VERSION = '0.034';
 # ABSTRACT: Task linking biblio records to authorities
 use Moose;
 
@@ -154,7 +154,7 @@ Koha::Contrib::Tamil::Authority::LinkBiblioTask - Task linking biblio records to
 
 =head1 VERSION
 
-version 0.033
+version 0.034
 
 =head1 METHODS
 

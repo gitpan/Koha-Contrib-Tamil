@@ -54,7 +54,7 @@ koha-dump-biblio - Dump a Koha Catalog
 
 =head1 VERSION
 
-version 0.033
+version 0.034
 
 =head1 DESCRIPTION
 
@@ -97,10 +97,11 @@ koha-dump-biblio - Dump a Koha Catalog
 
 =over
 
-=item B<-formater=ISO2709|MARCXML>
+=item B<-formater=iso2709|marcxml|text|yaml|json>
 
 Specify the format of the file containing the exported records. You can choose
-between ISO2709 format and MARCXML.
+between ISO2709 format and MARCXML, but also textual formts. By default
+C<iso2709>.
 
 =item B<-branch>
 

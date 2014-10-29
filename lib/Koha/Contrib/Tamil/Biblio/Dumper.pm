@@ -1,6 +1,6 @@
 package Koha::Contrib::Tamil::Biblio::Dumper;
 # ABSTRACT: Class dumping a Koha Catalog
-$Koha::Contrib::Tamil::Biblio::Dumper::VERSION = '0.033';
+$Koha::Contrib::Tamil::Biblio::Dumper::VERSION = '0.034';
 use Moose;
 
 extends 'AnyEvent::Processor';
@@ -24,7 +24,7 @@ has branches => (
     default => sub { [] }
 );
 
-# Optional query to select biblio records to dump
+
 has query => ( is => 'rw', isa => 'Str', default => '' );
 
 has convert => (
@@ -169,9 +169,52 @@ Koha::Contrib::Tamil::Biblio::Dumper - Class dumping a Koha Catalog
 
 =head1 VERSION
 
-version 0.033
+version 0.034
 
-=HEAD1 SYNOPSIS
+=head1 SYNOPSIS
+
+ my $converter = sub {
+     # Delete some fields
+     $record->fields(
+         [ grep { $_->tag !~ /012|014|071|099/ } @{$record->fields} ] );
+     return $record;
+ };
+ my $dumper = Koha::Contrib::Tamil::Biblio::Dumper->new(
+     file     => 'biblio.mrc',
+     branches => [ qw/ MAIN ANNEX / ],
+     query    => "SELECT biblionumber FROM biblio WHERE datecreated LIKE '2014-11%'"
+     convert  => $converter,
+     formater => 'iso2709',
+     verbose  => 1,
+ );
+ $dumper->run();
+
+=head1 ATTRIBUTES
+
+=head2 file
+
+Name of the file in which biblio records are exported. By default C<dump.mrc>.
+
+=head2 query
+
+Optional query to select biblio records to dump. The query must return a list
+of biblio records C<biblionumber>. For example: C<SELECT biblionumber FROM
+biblio WHERE biblionumber BETWEEN 1 AND 100>.
+
+=head2 convert
+
+A function which take in parameter a L<MARC::Moose::Record> biblio record, and
+returns a converted record.
+
+=head2 formater
+
+Type of formater used to write in L<file> file. Default value is C<marcxml>.
+Available values are: C<iso2709>, C<marcxml>, C<text>, C<json>, C<yaml>,
+C<json>.
+
+=head2 verbose
+
+Verbosity. By default 0 (false).
 
 =head1 AUTHOR
 
@@ -189,6 +232,6 @@ This is free software, licensed under:
 
 __END__
 
-
 1;
+
 
